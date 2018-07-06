@@ -3,7 +3,7 @@ title: FDM heat equation of isolated rod with dynamic end temparatures
 date: 2013-01-31 15:10:00
 author: Morten Olsen Lysgaard
 slug: fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures
-thumbnail: <https://2.bp.blogspot.com/-SKRjnoaRk80/UQqGj9N2QcI/AAAAAAAAC0Q/Alyn-_HvoEI/s400/heat2.png>
+thumbnail: heat2.png
 ---
 
 To test my understanding of the FDM method I made a simple
@@ -25,7 +25,7 @@ senario. For simplicity the rods length is \\(1\\).
 
 This gives rise to the following solution:
 
-![image](https://2.bp.blogspot.com/-SKRjnoaRk80/UQqGj9N2QcI/AAAAAAAAC0Q/Alyn-_HvoEI/s400/heat2.png){width="400px" height="300px"}
+![image](heat2.png)
 
 Here is the Octave code that calculates this plot, quite simple and self
 explanetory:

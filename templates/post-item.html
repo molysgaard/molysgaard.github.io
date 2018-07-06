@@ -1,4 +1,24 @@
 <tr>
-    <td><a href="$url$">$title$</a></td>
-    <td class="right"><time>$date$</time></td>
+		<div id="container" style="display: grid; grid-template-columns: auto auto auto; grid-template-rows: 2em 1fr;">
+      <a href="$url$" style="grid-area: 1 / 1 / 2/ 3;">$title$</a>
+			<time style="grid-area: 1 / 3 / 2 / 4; justify-self: end">$date$</time>
+
+      $if(thumbnail)$
+				$if(thumbnailtype)$
+					<div style="grid-area: 2 / 1 / 3 / 3;">$thumbnail$<div>
+				$else$
+					$if(summary)$
+						<a class="image-link" href="$url$"><img src="$reldir$$thumbnail$" style="width: 200px; height: 200px; object-fit: cover; grid-column: 1; grid-row: 2;"/></a>
+						<p style="grid-area: 2 / 2 / 3 / 4; justify-self: stretch">$summary$</p>
+					$else$
+						<a class="image-link" href="$url$"><img src="$reldir$$thumbnail$" style="height: 380; width: 360px; object-fit: cover; grid-column: 1/4; grid-row: 2;"/></a>
+					$endif$
+				$endif$
+      $else$
+				$if(summary)$
+					<p style="grid-area: 2 / 1 / 3 / 4;">$summary$</p>
+				$endif$
+      $endif$
+
+		</div>
 </tr>

@@ -257,7 +257,7 @@ footer {
 
 /* Links
 ----------------------------------------------- */
-a { 
+a:not(.image-link){ 
     text-decoration: none;
     border-bottom: 1px black dotted;
     color: #000;

@@ -1,6 +1,8 @@
 ---
 date: 2013-10-20
 title: Application of using MPI for distributed numerical computation; solving Poisson's equation.
+thumbnail: analysis/serial_walltime_mkl.svg
+summary: "This post is about high performance numerical computing. It explains the well known Poisson's equation, why it is a tough problem to solve fast when it gets big and then shows one way to implement a solver that will scale to huge problem sizes."
 ---
 
 This is a web-based version of a report I made for a parallel computation course

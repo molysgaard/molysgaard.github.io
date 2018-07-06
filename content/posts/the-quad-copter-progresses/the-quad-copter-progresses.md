@@ -4,6 +4,9 @@ date: 2012-08-25
 author: Morten Olsen Lysgaard
 tags: arduino, multirotor, quad, quadcopter, rc
 slug: the-quad-copter-progresses
+thumbnail: '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FTr6dLaTg4A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+thumbnailtype: video
+summary: 'New frame and flightcontroller and the drone is now flying quite well'
 ---
 
 I've done a good deal of tinkering since the last post. A new frame was

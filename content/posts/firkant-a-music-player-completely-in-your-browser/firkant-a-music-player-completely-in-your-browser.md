@@ -5,6 +5,7 @@ author: Morten Olsen Lysgaard
 tags: ampache, chrome, cloud music, coding, file api, firkant, html5, javascript, open source, web app
 slug: firkant-a-music-player-completely-in-your-browser
 thumbnail: firkant.jpg
+summary: 'Firkant is a music player that runs solely in the browser. It streams music from a server using the new HTML5 apis.'
 ---
 
 I'm found of music, it colors my day. This also applies to the rest

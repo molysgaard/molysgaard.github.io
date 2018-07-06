@@ -125,10 +125,23 @@ betterTitleField = Context $ \k _ i ->
     else do value <- getMetadataField (itemIdentifier i) "title"
             return $ StringField (mathdocInline $ if isNothing value then "" else fromJust value)
 
+defaultField :: String -> Context String
+defaultField f = Context $ \k _ i -> 
+    if (k /= f)
+    then empty
+    else do value <- getMetadataField (itemIdentifier i) f
+            case value of
+                Nothing -> empty
+                (Just a) -> return $ StringField a
+
 sourceField key = field key $
     fmap (maybe empty (sourceUrl . toUrl)) . getRoute . itemIdentifier
 
 sourceUrl xs = (take (length xs - 4) xs) ++ "md"
+
+-- | Filepath of the underlying file of the item
+relativeDirectoryField :: String -> Context a
+relativeDirectoryField key = field key $ return . joinPath . drop 1 . splitPath . dropFileName . toFilePath . itemIdentifier
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
@@ -139,13 +152,16 @@ postCtx =
     bodyField     "body"  `mappend`
     betterTitleField      `mappend`
     defaultContext        `mappend`
+    defaultField "thumbnail" `mappend`
+    defaultField "thumbnailtype" `mappend`
+    defaultField "summary" `mappend`
+    relativeDirectoryField "reldir" `mappend`
     constField "tags"  "" `mappend`
     missingField
 --------------------------------------------------------------------------------
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 postList sortFilter = do
     posts   <- sortFilter =<< loadAll ("content/posts/*/*.md" .&&. hasNoVersion)
-    --posts   <- loadAll ("content/posts/*/*.md" .&&. hasNoVersion)
     itemTpl <- loadBody "templates/post-item.html"
     list    <- applyTemplateList itemTpl postCtx posts
     return list

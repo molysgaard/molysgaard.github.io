@@ -4,6 +4,8 @@ date: 2014-01-29
 author: Morten Olsen Lysgaard
 tags: algorithms, c, coding, openmp, sph
 slug: example-smoothed-particle-hydrodynamics-with-c-and-openmp
+thumbnail: '<iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+thumbnailtype: video
 ---
 
 I am interested in ways of approximating differential equations
@@ -20,8 +22,7 @@ showing the live rendering is embedded below.\
  
 
 <div class="separator" style="clear: both; text-align: center;">
-<iframe allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" width="320" height="266" src="https://www.youtube.com/embed/Jbybort1F5Q?feature=player_embedded" frameborder="0">
-</iframe>
+<iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
 As the video shows the liquid is extremely pressure driven and thus
