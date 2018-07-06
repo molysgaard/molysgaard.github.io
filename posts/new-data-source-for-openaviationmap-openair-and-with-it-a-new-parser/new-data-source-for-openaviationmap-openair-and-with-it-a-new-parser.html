@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Morten Olsen Lysgaard">
+        <meta name="author" content="Morten Olsen Lysgaard">
+        <title>New data source for OpenAviationMap, OpenAir, and with it a new parser!</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body class="tex2jax_ignore">
+      <header class="hide-on-print">
+          <div id="blog-title">
+              <a href="/">Morten Olsen Lysgaard</a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/archive.html">Archive</a></li>
+              </ul>
+          </nav>
+      </header>
+      <article>
+          <h1 id="article-title">New data source for OpenAviationMap, OpenAir, and with it a new parser!</h1>
+          <br/>
+<div>
+<p>I've been working on a parser for the <a href="http://www.winpilot.com/usersguide/userairspace.asp">OpenAir</a> format this weekend. As usual I like to work in Haskell. The <a href="http://www.haskell.org/haskellwiki/Parsec">Parsec</a> library makes sense when creating parsers. You build up a parser from simpler parser, and in the end , you're sitting with a parser for a whole language, it's known as the parser combinator approach.<br />
+Parsing OpenAir gave me some special challenges. OpenAir is not what I would call an data format, but more a program. It's a list of instructions, and if you follow them, you will create an airspace. This is very non declarative, very non haskell. Therefore it makes it a challenge to parse it in haskell. Thanks to parsecs mutable state, everything got together.<br />
+I'm starting to think that OpenAir really needs a touchup though. OpenAir has choosen a data is programs approach, it feels really unatural. Maybe using YAML as a carrier format together with a schema specification on what attributes an airspace has would be more fruitful?<br />
+The instant benefit with my new parser is: Germany! We've now got complete and official coverage of Germany's airspaces. That's no small feat for a hobby project! Hungary is coming along nicely to thanks to Ákos' work on an eAIP parser. That will allow us to parse airspaces for all countries that has an eAIP, and that's actually some =)<br />
+The code is available in my <a href="https://github.com/molysgaard/OsmXmlTool">github</a></p>
+
+</div>
+<div class="info">Posted by Morten Olsen Lysgaard on 2012-03-12. </div>
+<div class="hide-on-print">
+  <div class="info">Tags: coding, haskell, OpenAviationMap.</div>
+</div>
+
+      </article>
+      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Olsen Lysgaard. Licensed under TODO unless otherwise specified.</footer>
+
+    </body>
+</html>
+
+</html>

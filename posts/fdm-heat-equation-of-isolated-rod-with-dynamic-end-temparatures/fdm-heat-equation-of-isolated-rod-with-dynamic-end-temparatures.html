@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Morten Olsen Lysgaard">
+        <meta name="author" content="Morten Olsen Lysgaard">
+        <title>FDM heat equation of isolated rod with dynamic end temparatures</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body class="tex2jax_ignore">
+      <header class="hide-on-print">
+          <div id="blog-title">
+              <a href="/">Morten Olsen Lysgaard</a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/archive.html">Archive</a></li>
+              </ul>
+          </nav>
+      </header>
+      <article>
+          <h1 id="article-title">FDM heat equation of isolated rod with dynamic end temparatures</h1>
+          <br/>
+<div>
+<p>To test my understanding of the FDM method I made a simple implementation of the Crank-Nickelson method applied on the heat equation. The physical intepretation is this: You have a perfectly insulated rod of length <span class="math inline">\(l\)</span>. At time <span class="math inline">\(t\_0\)</span> you know the temperature distribution in the rod, <span class="math inline">\(f(x)\)</span>. You also know that each end of the rod will have a temperature that is a function of time, <span class="math inline">\(g\_0(t)\)</span> and <span class="math inline">\(g\_1(t)\)</span>. Given this information, what will the temperature in the rod be at an arbitraray time <span class="math inline">\(t\)</span> and position <span class="math inline">\(x\)</span>? This is what the heat equation tells you, the problem, as usual with partial differential equations is that you can't always solve them explicitly. This is where numerical techniques comes to play and saves the day. Below is the result of a numerical simulation of such a senario. For simplicity the rods length is <span class="math inline">\(1\)</span>.</p>
+<p><span class="math display">\[ f(x) = (2+2\sin(6 \pi x)) (1-|2(x-1)|), 0 \leq x \leq1 \]</span> <span class="math display">\[ g\_0(x) = g\_1(x) = \sin(t), 0 \leq t \]</span></p>
+<p>This gives rise to the following solution:</p>
+<figure>
+<img src="https://2.bp.blogspot.com/-SKRjnoaRk80/UQqGj9N2QcI/AAAAAAAAC0Q/Alyn-_HvoEI/s400/heat2.png" alt="image" width="400" height="300" /><figcaption>image</figcaption>
+</figure>
+<p>Here is the Octave code that calculates this plot, quite simple and self explanetory:</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">M = <span class="fl">401</span>; <span class="co">% number of space nodes</span>
+h = <span class="fl">1</span>/(M+<span class="fl">1</span>); <span class="co">% space step size</span>
+
+T = <span class="fl">40000</span>;  <span class="co">% number of timesteps</span>
+t = <span class="fl">0.0000005</span>; <span class="co">% time step size</span>
+
+<span class="co">%U0 = 1-abs(linspace(-1,1,M)); % initial data</span>
+U0 = (<span class="fl">2</span>+<span class="fl">2</span>*<span class="fu">sin</span>(<span class="fu">linspace</span>(<span class="fl">0</span>,<span class="fl">6</span>*<span class="bn">pi</span>,M))).*(<span class="fl">1</span>-<span class="fu">abs</span>(<span class="fu">linspace</span>(-<span class="fl">1</span>,<span class="fl">1</span>,M))); <span class="co">% initial data</span>
+G1 = <span class="fu">sin</span>(<span class="fu">linspace</span>(<span class="fl">0</span>,<span class="fl">2</span>*<span class="bn">pi</span>,T));
+GM = G1;
+
+r = t/h^<span class="fl">2</span>;
+
+U = <span class="fu">zeros</span>(M,T);
+U(:,<span class="fl">1</span>) = U0;
+
+n = M;
+<span class="bn">e</span> = <span class="fu">ones</span>(n,<span class="fl">1</span>);
+A = <span class="fu">spdiags</span>([<span class="bn">e</span>, -<span class="fl">2</span>*<span class="bn">e</span>, <span class="bn">e</span>], -<span class="fl">1</span>:<span class="fl">1</span>, n, n);
+
+lkern = <span class="fu">eye</span>(M) + (r/<span class="fl">2</span>)*A;
+rkern = <span class="fu">eye</span>(M) - (r/<span class="fl">2</span>)*A;
+
+<span class="co">%for y=1:100</span>
+  U(:,<span class="fl">1</span>) = U0;
+  for <span class="bn">i</span>=<span class="fl">1</span>:T-<span class="fl">1</span>
+    U(:,<span class="bn">i</span>+<span class="fl">1</span>) = rkern\(lkern*U(:,<span class="bn">i</span>));
+    U(<span class="fl">1</span>,<span class="bn">i</span>+<span class="fl">1</span>) = G1(<span class="bn">i</span>+<span class="fl">1</span>);
+    U(M,<span class="bn">i</span>+<span class="fl">1</span>) = GM(<span class="bn">i</span>+<span class="fl">1</span>);
+  end
+<span class="co">%end</span>
+
+downscale = <span class="fl">1000</span>;
+
+Y = <span class="fu">zeros</span>(M,T/downscale);
+for <span class="bn">i</span>=<span class="fl">1</span>:T/downscale;
+  Y(:,<span class="bn">i</span>) = U(:,downscale*<span class="bn">i</span>);
+end
+
+tx = <span class="fu">linspace</span>(<span class="fl">0</span>,<span class="fl">1</span>,M);
+tt = <span class="fu">linspace</span>(<span class="fl">0</span>,t*T,T/downscale);
+<span class="fu">hold</span> off
+<span class="fu">mesh</span>(tt,tx,Y);
+<span class="co">%contour(U)</span>
+<span class="fu">ylabel</span>(<span class="st">&#39;space&#39;</span>);
+<span class="fu">xlabel</span>(<span class="st">&#39;time&#39;</span>);</code></pre></div>
+
+</div>
+<div class="info">Posted by Morten Olsen Lysgaard on 2013-01-31. </div>
+<div class="hide-on-print">
+  <div class="info">Tags: .</div>
+</div>
+
+      </article>
+      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Olsen Lysgaard. Licensed under TODO unless otherwise specified.</footer>
+
+    </body>
+</html>
+
+</html>

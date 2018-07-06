@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Morten Olsen Lysgaard">
+        <meta name="author" content="Morten Olsen Lysgaard">
+        <title>A fast, massively scalable, distributed and parallel solver for Poisson's equation</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body class="tex2jax_ignore">
+      <header class="hide-on-print">
+          <div id="blog-title">
+              <a href="/">Morten Olsen Lysgaard</a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/archive.html">Archive</a></li>
+              </ul>
+          </nav>
+      </header>
+      <article>
+          <h1 id="article-title">A fast, massively scalable, distributed and parallel solver for Poisson's equation</h1>
+          <br/>
+<div>
+<p>This semester I have been studying at Queensland in Australia, more specificly at <a href="http://www.qut.edu.au/">Queensland University of Technology</a> in Brisbane. Even though most of a semester abroad is about what happens outside school this post is focused on school.<br />
+I have taken a course in Parallel Computation at QUT. As a semester project I created a direct distributed memory solver for Poisson's equation. The solver is written in plain C taking use of technologies as OpenMP, BLAS and OpenMPI.<br />
+Compared to a naively written single core solver written in C my solution had a speedup of 200 on a 50 core cluster. Compared to a bleedingly optimized sequential implementation taking use of the Intel MKL library for hand tuned matrix multiply code a speedup of 20 was measured. The distributed nature of the solver can also cope with much bigger problems than the sequential implementation. One run was done over 64 nodes each using 8 cores, that is 512 cores. The problem was a finite difference discretization with 32000x32000 grid points. Calculating the solution took only 2 minutes. A sequential implementation would use take several days to finish. All the code is as usual available in my <a href="https://github.com/molysgaard/poisson">GitHub</a> together with the <a href="https://github.com/molysgaard/poisson/raw/master/README.pdf">report.</a></p>
+
+</div>
+<div class="info">Posted by Morten Olsen Lysgaard on 2013-10-20. </div>
+<div class="hide-on-print">
+  <div class="info">Tags: .</div>
+</div>
+
+      </article>
+      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Olsen Lysgaard. Licensed under TODO unless otherwise specified.</footer>
+
+    </body>
+</html>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Morten Olsen Lysgaard">
+        <meta name="author" content="Morten Olsen Lysgaard">
+        <title>OpenAviationMap technical crash cource</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body class="tex2jax_ignore">
+      <header class="hide-on-print">
+          <div id="blog-title">
+              <a href="/">Morten Olsen Lysgaard</a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/archive.html">Archive</a></li>
+              </ul>
+          </nav>
+      </header>
+      <article>
+          <h1 id="article-title">OpenAviationMap technical crash cource</h1>
+          <br/>
+<div>
+<p>So how does this OpenAviationMap tick? I'll try to explain as condensed as possible.<br />
+The main part is a web application written in Ruby called <a href="http://wiki.openstreetmap.org/wiki/The_Rails_Port">Rails Port</a>. It handles users, and the map API. This is an XML API that lets users send in changes to the map.<br />
+To edit the map we have <a href="http://josm.openstreetmap.de/">JOSM</a>. It's a Java application written for <a href="http://osm.org">OpenStreetMap</a>. It lets you draw things on the screen and give it tags. Then you can press upload, enter username and password, and <a href="http://josm.openstreetmap.de/">JOSM</a> posts your beautiful drawing to the API.<br />
+The <a href="http://wiki.openstreetmap.org/wiki/The_Rails_Port">Rails Port</a> application then receives this and stores it in a <a href="http://postgis.refractions.net/">PostGIS</a> enabled <a href="http://www.postgresql.org/">PostgreSQL</a> database.<br />
+All changes to the map are incremental. That means that you can individually revert changes, much like on Wikipedia or VCS's like GIT or SVN. This gives us the power to let everyone with an account edit the map by default, because no one can do irreplaceable damage.<br />
+To view the map I'm using <a href="http://openlayers.org/">OpenLayers</a>, written in JavaScript. I serve the <a href="http://openaviationmap.org/">OpenAviationMap</a> data from the database via some custom code as WFS to <a href="http://openlayers.org/">OpenLayers</a> which displays it appropriately over (currently) a Google physical base map.</p>
+
+</div>
+<div class="info">Posted by Morten Olsen Lysgaard on 2012-02-03. </div>
+<div class="hide-on-print">
+  <div class="info">Tags: OAM, OpenAviationMap, OpenStreetMap, OSM.</div>
+</div>
+
+      </article>
+      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Olsen Lysgaard. Licensed under TODO unless otherwise specified.</footer>
+
+    </body>
+</html>
+
+</html>

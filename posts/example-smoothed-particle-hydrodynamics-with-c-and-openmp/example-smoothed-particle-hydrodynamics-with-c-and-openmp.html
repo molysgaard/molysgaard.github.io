@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Morten Olsen Lysgaard">
+        <meta name="author" content="Morten Olsen Lysgaard">
+        <title>Example Smoothed-particle hydrodynamics with C and OpenMP</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body class="tex2jax_ignore">
+      <header class="hide-on-print">
+          <div id="blog-title">
+              <a href="/">Morten Olsen Lysgaard</a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/archive.html">Archive</a></li>
+              </ul>
+          </nav>
+      </header>
+      <article>
+          <h1 id="article-title">Example Smoothed-particle hydrodynamics with C and OpenMP</h1>
+          <br/>
+<div>
+<p>I am interested in ways of approximating differential equations numerically. Yeasterday I read up on the basics of Smoothed-Particle Hydrodynamics, or SPH for short. It is a way of approximating a PDE using a finite set of particles that represent a quantity, eg. a fluid. To read more about the basics of the method take a look at this <a href="http://image.diku.dk/kenny/download/vriphys10_course/sph.pdf">PDF</a>.<br />
+The algorithm was first prototyped is Octave (Matlab) and found to slow. Then I coded a native C version with SDL graphics and OpenMP to speed up some of the calculations, it worked pretty well. The code is available at my <a href="https://github.com/molysgaard/navierstokes">GitHub</a>. A video showing the live rendering is embedded below.<br />
+ </p>
+<div class="separator" style="clear: both; text-align: center;">
+<iframe allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" width="320" height="266" src="https://www.youtube.com/embed/Jbybort1F5Q?feature=player_embedded" frameborder="0">
+</iframe>
+</div>
+<p>As the video shows the liquid is extremely pressure driven and thus does not represent incompressible liquids, like water. The physical correctness of this simulation as a whole has to be taken with a grain of salt because of the extremely simple implementation. But it serves as a very <em>visual</em> way of communicating how the method works and what strengths/weaknesses it has. | One nice property is that the method conserves mass.</p>
+
+</div>
+<div class="info">Posted by Morten Olsen Lysgaard on 2014-01-29. </div>
+<div class="hide-on-print">
+  <div class="info">Tags: algorithms, c, coding, openmp, sph.</div>
+</div>
+
+      </article>
+      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Olsen Lysgaard. Licensed under TODO unless otherwise specified.</footer>
+
+    </body>
+</html>
+
+</html>
