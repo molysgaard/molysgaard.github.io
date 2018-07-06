@@ -109,7 +109,7 @@ mathDoc = return . fmap mathdoc
 mathCompiler = getResourceBody >>= mathDoc
 --mathCompiler = getResourceString >>= mathDoc
 
-idPages = ["mathjax_conf.js"]
+idPages = ["mathjax_conf.js", "CNAME"]
 
 htmlTitleField :: Context String
 htmlTitleField = Context $ \k _ i -> 
