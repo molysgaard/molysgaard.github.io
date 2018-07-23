@@ -11,6 +11,7 @@ import           MathDoc
 import           Control.Monad
 import           Control.Applicative        ((<$>), Alternative (..), (<$>))
 import           Data.Maybe
+import Data.Monoid
 --------------------------------------------------------------------------------
 import System.Directory
 import Debug.Trace
@@ -49,10 +50,13 @@ main = do
 --            >>= loadAndApplyTemplate "templates/post.html"    postCtx
 --            >>= loadAndApplyTemplate "templates/default.html" postCtx
 --        --    >>= relativizeUrls
+
     -- raw posts
+    -- this one is needed to copy over images and other resources for the blog posts
     match "content/posts/*/**" $ version "raw" $ do
         route contentRoute
         compile copyFileCompiler
+
 {-
     match "files/*" $ version "raw" $ do
         route   idRoute
@@ -118,26 +122,31 @@ htmlTitleField = Context $ \k _ i ->
     else do value <- getMetadataField (itemIdentifier i) "title"
             return $ StringField (if isNothing value then "" else fromJust value)
                                                                     
-betterTitleField :: Context String
-betterTitleField = Context $ \k _ i -> 
-    if (k /= "title")
-    then do empty
-    else do value <- getMetadataField (itemIdentifier i) "title"
-            return $ StringField (mathdocInline $ if isNothing value then "" else fromJust value)
+--defaultField :: String -> Context String
+--defaultField f =
+--  let fun i = do
+--            val <- getMetadataField (itemIdentifier i) f
+--            case val of
+--                Nothing -> return empty
+--                Just a -> return a
+--  in field f fun
 
-defaultField :: String -> Context String
 defaultField f = Context $ \k _ i -> 
     if (k /= f)
     then empty
     else do value <- getMetadataField (itemIdentifier i) f
             case value of
                 Nothing -> empty
-                (Just a) -> return $ StringField a
+                (Just a) -> traceShow ("GRESS", a) $ return $ StringField a
 
-sourceField key = field key $
-    fmap (maybe empty (sourceUrl . toUrl)) . getRoute . itemIdentifier
-
-sourceUrl xs = (take (length xs - 4) xs) ++ "md"
+defaultMathField :: String -> Context String
+defaultMathField f = Context $ \k _ i -> 
+    if (k /= f)
+    then traceShow ("EMPTY", f, k, itemIdentifier i) empty
+    else do value <- traceShow ("GETTING", f, itemIdentifier i) $ getMetadataField (itemIdentifier i) k
+            case value of
+                Nothing -> traceShow ("NOTHING", f, itemIdentifier i) empty
+                (Just a) -> return . StringField $ traceShow ("nisse1", f, itemIdentifier i) (mathdocInline $ traceShow ("nisse2", f, itemIdentifier i) a)
 
 -- | Filepath of the underlying file of the item
 relativeDirectoryField :: String -> Context a
@@ -146,18 +155,14 @@ relativeDirectoryField key = field key $ return . joinPath . drop 1 . splitPath 
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    sourceField "source"  `mappend`
-    htmlTitleField        `mappend`
-    dateField "date" "%F" `mappend`
-    bodyField     "body"  `mappend`
-    betterTitleField      `mappend`
-    defaultContext        `mappend`
-    defaultField "thumbnail" `mappend`
-    defaultField "thumbnailtype" `mappend`
-    defaultField "summary" `mappend`
-    relativeDirectoryField "reldir" `mappend`
-    constField "tags"  "" `mappend`
-    missingField
+    defaultMathField "summary" <>
+    dateField "date" "%F" <>
+    htmlTitleField        <>
+    defaultField "thumbnail" <>
+    defaultField "thumbnailtype" <>
+    relativeDirectoryField "reldir" <>
+    constField "tags"  "" <>
+    defaultContext -- this contains all metadata fields, these are overwritten by the fields above when nessescary
 --------------------------------------------------------------------------------
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 postList sortFilter = do

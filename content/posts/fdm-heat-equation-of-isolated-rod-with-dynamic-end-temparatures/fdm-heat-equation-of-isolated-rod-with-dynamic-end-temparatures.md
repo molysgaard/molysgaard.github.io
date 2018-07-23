@@ -4,15 +4,21 @@ date: 2013-01-31 15:10:00
 author: Morten Olsen Lysgaard
 slug: fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures
 thumbnail: heat2.png
+summary: >
+  To test my understanding of the FDM method I made a simple
+  implementation of the Crank-Nickelson method applied on the
+  heat equation. The physical intepretation is this:
+  You have a perfectly insulated rod of length $l$.
+  At time $t_0$ you know the temperature distribution in the rod
 ---
 
 To test my understanding of the FDM method I made a simple
 implementation of the Crank-Nickelson method applied on the heat
 equation. The physical intepretation is this: You have a perfectly
-insulated rod of length \\(l\\). At time \\(t\_0\\) you know the
+insulated rod of length \\(l\\). At time \\(t_0\\) you know the
 temperature distribution in the rod, \\(f(x)\\). You also know that each
 end of the rod will have a temperature that is a function of time,
-\\(g\_0(t)\\) and \\(g\_1(t)\\). Given this information, what will the
+\\(g_0(t)\\) and \\(g_1(t)\\). Given this information, what will the
 temperature in the rod be at an arbitraray time \\(t\\) and position
 \\(x\\)? This is what the heat equation tells you, the problem, as usual
 with partial differential equations is that you can't always solve them
@@ -21,7 +27,7 @@ the day. Below is the result of a numerical simulation of such a
 senario. For simplicity the rods length is \\(1\\). 
 
 \\[ f(x) = (2+2\sin(6 \pi x)) (1-|2(x-1)|), 0 \leq x \leq1 \\] 
-\\[ g\_0(x) = g\_1(x) = \sin(t), 0 \leq t \\]
+\\[ g_0(x) = g_1(x) = \sin(t), 0 \leq t \\]
 
 This gives rise to the following solution:
 
