@@ -4,6 +4,12 @@ date: 2012-03-12
 author: Morten Olsen Lysgaard
 tags: coding, haskell, OpenAviationMap
 slug: new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser
+summary: >
+  I've been working on a parser for the
+  [OpenAir](http://www.winpilot.com/usersguide/userairspace.asp) format
+  this weekend. As usual I like to work in Haskell. The
+  [Parsec](http://www.haskell.org/haskellwiki/Parsec) library makes sense
+  when creating parsers.
 ---
 
 I've been working on a parser for the
