@@ -1,24 +1,22 @@
 <tr>
-		<div id="container" style="display: grid; grid-template-columns: 1fr 2fr auto; grid-template-rows: auto 1fr 4em">
-      <a href="$url$" style="grid-area: 1 / 1 / 2/ 3; padding-bottom: 0.5em;">$title$</a>
-			<time style="grid-area: 1 / 3 / 2 / 4; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">$date$</time>
-
-      $if(thumbnail)$
-				$if(thumbnailtype)$
-					<div style="grid-area: 2 / 1 / 3 / 4;">$thumbnail$<div>
-				$else$
-					$if(summary)$
-						<a class="image-link" href="$url$"><img src="$reldir$$thumbnail$" style="width: 200px; height: 200px; object-fit: cover; grid-column: 1; grid-row: 2;"/></a>
-						<p style="grid-area: 2 / 2 / 3 / 4; justify-self: stretch">$summary$</p>
-					$else$
-						<a class="image-link" href="$url$"><img src="$reldir$$thumbnail$" style="height: 380; width: 360px; object-fit: cover; grid-column: 1/4; grid-row: 2;"/></a>
-					$endif$
-				$endif$
-      $else$
-				$if(summary)$
-					<p style="grid-area: 2 / 1 / 3 / 4;">$summary$</p>
-				$endif$
-      $endif$
-
-		</div>
+    <div id="container">
+        <a href="$url$" style="grid-area: header; padding-bottom: 0.5em;">$title$</a>
+        <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">$date$</time>
+        $if(thumbnail)$
+            $if(thumbnailtype)$
+                <div id="full-content">$thumbnail$<div>
+            $else$
+                $if(summary)$
+                    <a class="image-link" id="thumbnail" href="$url$"><img src="$reldir$$thumbnail$" style="width: 200px; height: 200px; object-fit: cover;"/></a>
+                    <p id="summary" style="justify-self: stretch">$summary$</p>
+                $else$
+                    <a class="image-link" id="full-content" href="$url$"><img src="$reldir$$thumbnail$" style="height: 380; width: 360px; object-fit: cover"/></a>
+                $endif$
+            $endif$
+        $else$
+            $if(summary)$
+                <p id="full-content">$summary$</p>
+            $endif$
+        $endif$
+    </div>
 </tr>
