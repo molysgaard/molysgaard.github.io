@@ -61,19 +61,6 @@ main = do
     match "files/*" $ version "raw" $ do
         route   idRoute
         compile copyFileCompiler
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            let archiveCtx =
-                    field "posts" (\_ -> postList recentFirst) `mappend`
-                    constField "title" "Archives"              `mappend`
-                    titleField    "htmltitle"                  `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
 -}
     -- Archive
     match "content/archive.html" $ do

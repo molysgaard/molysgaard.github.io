@@ -1,22 +1,22 @@
-<tr>
-    <div id="container">
-        <a href="$url$" style="grid-area: header; padding-bottom: 0.5em;">$title$</a>
-        <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">$date$</time>
-        $if(thumbnail)$
-            $if(thumbnailtype)$
-                <div id="full-content">$thumbnail$<div>
-            $else$
-                $if(summary)$
-                    <a class="image-link" id="thumbnail" href="$url$"><img src="$reldir$$thumbnail$" style="width: 200px; height: 200px; object-fit: cover;"/></a>
-                    <p id="summary" style="justify-self: stretch">$summary$</p>
-                $else$
-                    <a class="image-link" id="full-content" href="$url$"><img src="$reldir$$thumbnail$" style="height: 380; width: 360px; object-fit: cover"/></a>
-                $endif$
-            $endif$
-        $else$
-            $if(summary)$
-                <p id="full-content">$summary$</p>
-            $endif$
-        $endif$
-    </div>
-</tr>
+<li>
+  <div id="container">
+      <a href="$url$" style="grid-area: header; padding-bottom: 0.5em;">$title$</a>
+      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">$date$</time>
+      $if(thumbnail)$
+          $if(thumbnailtype)$
+              <div id="full-content">$thumbnail$<div>
+          $else$
+              $if(summary)$
+                  <a class="image-link" id="thumbnail" href="$url$"><img src="$reldir$$thumbnail$" style="width: 100%; object-fit: cover;"/></a>
+                  <p id="summary" style="justify-self: stretch">$summary$</p>
+              $else$
+                  <a class="image-link" id="full-content" href="$url$"><img src="$reldir$$thumbnail$" style="height: 100%; object-fit: cover"/></a>
+              $endif$
+          $endif$
+      $else$
+          $if(summary)$
+              <p id="full-content">$summary$</p>
+          $endif$
+      $endif$
+  </div>
+</li>
