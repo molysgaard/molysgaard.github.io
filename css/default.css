@@ -1,23 +1,22 @@
-/* MathJax Font */
 @font-face {
-  font-family: "MJXc-TeX";
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff") format("woff"), url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf") format("opentype");
+  font-family: "STIXv2";
+  src: url("/files/STIXv2/WOFF2/STIX2Text-Regular.woff2") format("woff2"), url("/files/STIXv2/WOFF/STIX2Text-Regular.woff") format("woff"), url("/files/STIXv2/OTF/STIX2Text-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "MJXc-TeX";
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff") format("woff"), url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf") format("opentype");
+  font-family: "STIXv2";
+  src: url("/files/STIXv2/WOFF2/STIX2Text-Bold.woff2") format("woff2"), url("/files/STIXv2/WOFF/STIX2Text-Bold.woff") format("woff"), url("/files/STIXv2/OTF/STIX2Text-Bold.otf") format("opentype");
   font-weight: bold;
 }
 @font-face {
-  font-family: "MJXc-TeX";
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff") format("woff"), url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf") format("opentype");
+  font-family: "STIXv2";
+  src: url("/files/STIXv2/WOFF2/STIX2Text-Italic.woff2") format("woff2"), url("/files/STIXv2/WOFF/STIX2Text-Italic.woff") format("woff"), url("/files/STIXv2/OTF/STIX2Text-Italic.otf") format("opentype");
   font-style: italic;
 }
 @font-face {
-  font-family: "MJXc-TeX";
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff") format("woff"), url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf") format("opentype");
+  font-family: "STIXv2";
+  src: url("/files/STIXv2/WOFF2/STIX2Text-BoldItalic.woff2") format("woff2"), url("/files/STIXv2/WOFF/STIX2Text-BoldItalic.woff") format("woff"), url("/files/STIXv2/OTF/STIX2Text-BoldItalic.otf") format("opentype");
   font-weight: bold;
   font-style: italic;
 }
@@ -55,6 +54,10 @@
 #summary {
     grid-area: summary;
 }
+#post-title {
+    grid-area: header;
+    font-size: 1.4em;
+}
 
 
 /* responsive video embeddings */
@@ -81,7 +84,7 @@ html {
 /* Main structure
 ----------------------------------------------- */
 body {
-    font-family: MJXc-TeX;
+    font-family: 'STIXv2';
     font-size: 100%;
     line-height: 120%;
     background-color: #fff;
@@ -90,8 +93,6 @@ body {
 }
 
 header, article {
-    /*padding-left: 20px;
-    padding-right: 20px;*/
 		max-width:840px;
 		margin-left: auto;
 		margin-right: auto;
@@ -100,8 +101,6 @@ header, article {
 
 footer, #theme-info, #footer-include {
     clear: both;
-}
-article {
 }
 /* Positioning
 ----------------------------------------------- */
@@ -255,7 +254,7 @@ figure>img {
     border: none;
     padding: 0;
     line-height: 100%;
-    text-align:center;
+    text-align: center;
 }
 /* The headers tries to emulate the format of
  Oxfod Lecture Series in Mathematics and Its Applications */
@@ -315,48 +314,6 @@ a:hover {
     text-decoration:none;
     border: 0;
 }
-.theorem-environment{
-  color: #000;
-  padding: 0 0;
-  margin: 20px 0;
-  font-style: italic;
-}
-.theorem-header {
-  font-weight: bold;
-  font-style: normal;
-}
-.theorem-header .index:before {
-  content: ' ';
-}
-.theorem-header .name:before {
-  content: ' (';
-}
-.theorem-header .name:after {
-  content: ')';
-}
-.theorem-header:after {
-  content: '.\2002\2002';
-}
-.theorem-header + p{
-    display:inline;
-}
-.Proof .type {
-  font-style: italic;
-  font-weight: normal;
-}
-.Proof {
-  padding: 0 0;
-  font-style: normal;
-  position: relative;
-}
-.Proof:after {
-    content: '∎';
-    display: inline-block;
-    font-size: 100%;
-    bottom: 0%;
-    right: 0%;
-    position: absolute;
-}
 .gist-file {
   line-height: 1.2;
   font-size: 75%;
@@ -401,14 +358,14 @@ code > span.co { font-style: italic; }
 code > span.al { font-weight: bold; }
 code > span.er { font-weight: bold; }
 
-  dt {
-    font-weight: normal;
-    font-style: italic;
-  }
-  dd {
-    margin: 0;
-    padding: 0 0 0.5em 0;
-  }
+dt {
+  font-weight: normal;
+  font-style: italic;
+}
+dd {
+  margin: 0;
+  padding: 0 0 0.5em 0;
+}
 
 /* printing hide lame things*/
 @media print {

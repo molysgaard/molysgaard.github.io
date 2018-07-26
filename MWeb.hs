@@ -57,11 +57,10 @@ main = do
         route contentRoute
         compile copyFileCompiler
 
-{-
-    match "files/*" $ version "raw" $ do
+    match "files/**" $ version "raw" $ do
         route   idRoute
         compile copyFileCompiler
--}
+
     -- Archive
     match "content/archive.html" $ do
         route contentRoute
