@@ -51,14 +51,27 @@
 #thumbnail {
     grid-area: thumbnail;
 }
+.image-link>img {
+  width: 100%;
+  object-fit: cover;
+}
 #summary {
     grid-area: summary;
 }
 #post-title {
     grid-area: header;
     font-size: 1.4em;
+    padding-bottom: 0.5em;
 }
-
+#date {
+  grid-area: date;
+  justify-self: end;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+}
+#summary {
+  justify-self: stretch;
+}
 
 /* responsive video embeddings */
 .videoWrapper {
