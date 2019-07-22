@@ -6,7 +6,41 @@
         <meta name="description" content="Morten Olsen Lysgaard">
         <meta name="author" content="Morten Olsen Lysgaard">
         <title>Posts</title>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              showMathMenu: false,
+              jax: ["input/TeX","output/CommonHTML"],
+              extensions: ["tex2jax.js"],
+              messageStyle: "none",
+                tex2jax: {
+                  processEscapes: true,
+                  ignoreClass: "tex2jax_ignore",
+                  processClass: "math"
+                },
+              TeX: { 
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js"],
+                Macros: { 
+                    R: '{\\mathbb{R}}', 
+                    N: '{\\mathbb{N}}', 
+                    Z: '{\\mathbb{Z}}', 
+                    C: '{\\mathbb{C}}', 
+                    F: '{\\mathbb{F}}', 
+                    argmin: '{\\mathop{\\operatorname*{arg\\,min}}}',
+                    argmax: '{\\mathop{\\operatorname*{arg\\,max}}}',
+                    mex: '{\\mathop{\\operatorname{mex}}}', 
+                    lcm: '{\\mathop{\\operatorname{lcm}}}',
+                    bigtriangleright: '{\\mathop{\\Large \\triangleright}}',
+                    bigtriangleleft: '{\\mathop{\\Large \\triangleleft}}',
+                    set: ['\\left\\{ #1 \\right\\}',1],
+                    floor: ['\\left\\lfloor #1 \\right\\rfloor',1],
+                    ceil:  ['\\left\\lceil #1 \\right\\rceil',1],
+                    abs:  ['\\left| #1 \\right|',1]
+                 } 
+                },
+            		"HTML-CSS": { fonts: ["STIX"] }
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/css/default.css" />
 
@@ -37,8 +71,8 @@
           <ul id="postindex">
 <li>
   <div id="container">
-      <a href="/posts/nice-ice/nice-ice.html" style="grid-area: header; padding-bottom: 0.5em;">Nice Ice</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2015-12-25</time>
+      <a href="/posts/nice-ice/nice-ice.html" id="post-title">Nice Ice</a>
+      <time id="date">2015-12-25</time>
       
           
               <div id="full-content"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/150010039?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><div>
@@ -48,8 +82,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/vtol-vertical-takeoff-flying-wing/vtol-vertical-takeoff-flying-wing.html" style="grid-area: header; padding-bottom: 0.5em;">VTOL, Vertical Takeoff, Flying Wing</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2014-06-29</time>
+      <a href="/posts/vtol-vertical-takeoff-flying-wing/vtol-vertical-takeoff-flying-wing.html" id="post-title">VTOL, Vertical Takeoff, Flying Wing</a>
+      <time id="date">2014-06-29</time>
       
           
               <div id="full-content"><div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/xYRHhSLbvXY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div><div>
@@ -59,8 +93,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/example-smoothed-particle-hydrodynamics-with-c-and-openmp/example-smoothed-particle-hydrodynamics-with-c-and-openmp.html" style="grid-area: header; padding-bottom: 0.5em;">Example Smoothed-particle hydrodynamics with C and OpenMP</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2014-01-29</time>
+      <a href="/posts/example-smoothed-particle-hydrodynamics-with-c-and-openmp/example-smoothed-particle-hydrodynamics-with-c-and-openmp.html" id="post-title">Example Smoothed-particle hydrodynamics with C and OpenMP</a>
+      <time id="date">2014-01-29</time>
       
           
               <div id="full-content"><div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div><div>
@@ -70,13 +104,13 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/summa/summa.html" style="grid-area: header; padding-bottom: 0.5em;">Application of using MPI for distributed numerical computation; solving Poisson's equation.</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2013-10-20</time>
+      <a href="/posts/summa/summa.html" id="post-title">Application of using MPI for distributed numerical computation; solving Poisson's equation.</a>
+      <time id="date">2013-10-20</time>
       
           
               
-                  <a class="image-link" id="thumbnail" href="/posts/summa/summa.html"><img src="posts/summa/analysis/serial_walltime_mkl.svg" style="width: 100%; object-fit: cover;"/></a>
-                  <p id="summary" style="justify-self: stretch">This post is about high performance numerical computing. It explains the well known Poisson's equation, why it is a tough problem to solve fast when it gets big and then shows one way to implement a solver that will scale to huge problem sizes</p>
+                  <a class="image-link" id="thumbnail" href="/posts/summa/summa.html"><img src="posts/summa/analysis/serial_walltime_mkl.svg"/></a>
+                  <p id="summary">This post is about high performance numerical computing. It explains the well known Poisson's equation, why it is a tough problem to solve fast when it gets big and then shows one way to implement a solver that will scale to huge problem sizes</p>
               
           
       
@@ -84,8 +118,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/film-job-at-isfit/film-job-at-isfit.html" style="grid-area: header; padding-bottom: 0.5em;">Film job at ISFIT!</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2013-04-22</time>
+      <a href="/posts/film-job-at-isfit/film-job-at-isfit.html" id="post-title">Film job at ISFIT!</a>
+      <time id="date">2013-04-22</time>
       
           
               <div id="full-content"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/62015547?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><div>
@@ -95,27 +129,13 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures.html" style="grid-area: header; padding-bottom: 0.5em;">FDM heat equation of isolated rod with dynamic end temparatures</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2013-01-31</time>
+      <a href="/posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures.html" id="post-title">FDM heat equation of isolated rod with dynamic end temparatures</a>
+      <time id="date">2013-01-31</time>
       
           
               
-                  <a class="image-link" id="thumbnail" href="/posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures.html"><img src="posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/heat2.png" style="width: 100%; object-fit: cover;"/></a>
-                  <p id="summary" style="justify-self: stretch">To test my understanding of the FDM method I made a simple implementation of the Crank-Nickelson method applied on the heat equation. The physical intepretation is this: You have a perfectly insulated rod of length <span class="math inline">\(l\)</span>. At time <span class="math inline">\(t_0\)</span> you know the temperature distribution in the ro</p>
-              
-          
-      
-  </div>
-</li>
-<li>
-  <div id="container">
-      <a href="/posts/firkant-a-music-player-completely-in-your-browser/firkant-a-music-player-completely-in-your-browser.html" style="grid-area: header; padding-bottom: 0.5em;">Firkant, a music player, completely in your browser!</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-08-25</time>
-      
-          
-              
-                  <a class="image-link" id="thumbnail" href="/posts/firkant-a-music-player-completely-in-your-browser/firkant-a-music-player-completely-in-your-browser.html"><img src="posts/firkant-a-music-player-completely-in-your-browser/firkant.jpg" style="width: 100%; object-fit: cover;"/></a>
-                  <p id="summary" style="justify-self: stretch">Firkant is a music player that runs solely in the browser. It streams music from a server using the new HTML5 apis</p>
+                  <a class="image-link" id="thumbnail" href="/posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures.html"><img src="posts/fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures/heat2.png"/></a>
+                  <p id="summary">To test my understanding of the FDM method I made a simple implementation of the Crank-Nickelson method applied on the heat equation. The physical intepretation is this: You have a perfectly insulated rod of length <span class="math inline">\(l\)</span>. At time <span class="math inline">\(t_0\)</span> you know the temperature distribution in the ro</p>
               
           
       
@@ -123,8 +143,22 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/the-quad-copter-progresses/the-quad-copter-progresses.html" style="grid-area: header; padding-bottom: 0.5em;">The quad copter progresses</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-08-25</time>
+      <a href="/posts/firkant-a-music-player-completely-in-your-browser/firkant-a-music-player-completely-in-your-browser.html" id="post-title">Firkant, a music player, completely in your browser!</a>
+      <time id="date">2012-08-25</time>
+      
+          
+              
+                  <a class="image-link" id="thumbnail" href="/posts/firkant-a-music-player-completely-in-your-browser/firkant-a-music-player-completely-in-your-browser.html"><img src="posts/firkant-a-music-player-completely-in-your-browser/firkant.jpg"/></a>
+                  <p id="summary">Firkant is a music player that runs solely in the browser. It streams music from a server using the new HTML5 apis</p>
+              
+          
+      
+  </div>
+</li>
+<li>
+  <div id="container">
+      <a href="/posts/the-quad-copter-progresses/the-quad-copter-progresses.html" id="post-title">The quad copter progresses</a>
+      <time id="date">2012-08-25</time>
       
           
               <div id="full-content"><div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FTr6dLaTg4A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div><div>
@@ -134,8 +168,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser/new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser.html" style="grid-area: header; padding-bottom: 0.5em;">New data source for OpenAviationMap, OpenAir, and with it a new parser!</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-03-12</time>
+      <a href="/posts/new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser/new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser.html" id="post-title">New data source for OpenAviationMap, OpenAir, and with it a new parser!</a>
+      <time id="date">2012-03-12</time>
       
           
               <p id="full-content">I've been working on a parser for the <a href="http://www.winpilot.com/usersguide/userairspace.asp">OpenAir</a> format this weekend. As usual I like to work in Haskell. The <a href="http://www.haskell.org/haskellwiki/Parsec">Parsec</a> library makes sense when creating parsers</p>
@@ -145,8 +179,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/new-tools-for-oam-import-data-from-osm-to-oam-in-a-batch-process/new-tools-for-oam-import-data-from-osm-to-oam-in-a-batch-process.html" style="grid-area: header; padding-bottom: 0.5em;">New tools for OAM: Import data from OSM to OAM in a batch process.</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-02-18</time>
+      <a href="/posts/new-tools-for-oam-import-data-from-osm-to-oam-in-a-batch-process/new-tools-for-oam-import-data-from-osm-to-oam-in-a-batch-process.html" id="post-title">New tools for OAM: Import data from OSM to OAM in a batch process.</a>
+      <time id="date">2012-02-18</time>
       
           
       
@@ -154,8 +188,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/simulation-of-quantum-wave-function/simulation-of-quantum-wave-function.html" style="grid-area: header; padding-bottom: 0.5em;">Simulation of quantum wave function</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-02-16</time>
+      <a href="/posts/simulation-of-quantum-wave-function/simulation-of-quantum-wave-function.html" id="post-title">Simulation of quantum wave function</a>
+      <time id="date">2012-02-16</time>
       
           
       
@@ -163,8 +197,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/openaviationmap-technical-crash-cource/openaviationmap-technical-crash-cource.html" style="grid-area: header; padding-bottom: 0.5em;">OpenAviationMap technical crash cource</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-02-03</time>
+      <a href="/posts/openaviationmap-technical-crash-cource/openaviationmap-technical-crash-cource.html" id="post-title">OpenAviationMap technical crash cource</a>
+      <time id="date">2012-02-03</time>
       
           
       
@@ -172,8 +206,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/the-start-of-something-great-open-aviation-map/the-start-of-something-great-open-aviation-map.html" style="grid-area: header; padding-bottom: 0.5em;">The start of something great; Open Aviation Map</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-02-03</time>
+      <a href="/posts/the-start-of-something-great-open-aviation-map/the-start-of-something-great-open-aviation-map.html" id="post-title">The start of something great; Open Aviation Map</a>
+      <time id="date">2012-02-03</time>
       
           
       
@@ -181,8 +215,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/sirkel-released/sirkel-released.html" style="grid-area: header; padding-bottom: 0.5em;">Sirkel released!</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2011-09-17</time>
+      <a href="/posts/sirkel-released/sirkel-released.html" id="post-title">Sirkel released!</a>
+      <time id="date">2011-09-17</time>
       
           
       
@@ -190,8 +224,8 @@
 </li>
 <li>
   <div id="container">
-      <a href="/posts/barnes-hut-orbital-simulator/barnes-hut-orbital-simulator.html" style="grid-area: header; padding-bottom: 0.5em;">Barnes & Hut orbital simulator</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2011-06-30</time>
+      <a href="/posts/barnes-hut-orbital-simulator/barnes-hut-orbital-simulator.html" id="post-title">Barnes & Hut orbital simulator</a>
+      <time id="date">2011-06-30</time>
       
           
       

@@ -6,7 +6,41 @@
         <meta name="description" content="Morten Olsen Lysgaard">
         <meta name="author" content="Morten Olsen Lysgaard">
         <title>Archives</title>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://chaoxuprime.com/mathjax_conf.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              showMathMenu: false,
+              jax: ["input/TeX","output/CommonHTML"],
+              extensions: ["tex2jax.js"],
+              messageStyle: "none",
+                tex2jax: {
+                  processEscapes: true,
+                  ignoreClass: "tex2jax_ignore",
+                  processClass: "math"
+                },
+              TeX: { 
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js"],
+                Macros: { 
+                    R: '{\\mathbb{R}}', 
+                    N: '{\\mathbb{N}}', 
+                    Z: '{\\mathbb{Z}}', 
+                    C: '{\\mathbb{C}}', 
+                    F: '{\\mathbb{F}}', 
+                    argmin: '{\\mathop{\\operatorname*{arg\\,min}}}',
+                    argmax: '{\\mathop{\\operatorname*{arg\\,max}}}',
+                    mex: '{\\mathop{\\operatorname{mex}}}', 
+                    lcm: '{\\mathop{\\operatorname{lcm}}}',
+                    bigtriangleright: '{\\mathop{\\Large \\triangleright}}',
+                    bigtriangleleft: '{\\mathop{\\Large \\triangleleft}}',
+                    set: ['\\left\\{ #1 \\right\\}',1],
+                    floor: ['\\left\\lfloor #1 \\right\\rfloor',1],
+                    ceil:  ['\\left\\lceil #1 \\right\\rceil',1],
+                    abs:  ['\\left| #1 \\right|',1]
+                 } 
+                },
+            		"HTML-CSS": { fonts: ["STIX"] }
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/css/default.css" />
 
@@ -43,8 +77,8 @@ Here are old or low quality posts that have been archived.
 <ul id="postindex">
 <li>
   <div id="container">
-      <a href="/posts/a-fast-massively-scalable-distributed-and-parallel-solver-for-poissons-equation/2013-10-20-a-fast-massively-scalable-distributed-and-parallel-solver-for-poissons-equation.html" style="grid-area: header; padding-bottom: 0.5em;">A fast, massively scalable, distributed and parallel solver for Poisson's equation</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2013-10-20</time>
+      <a href="/posts/a-fast-massively-scalable-distributed-and-parallel-solver-for-poissons-equation/2013-10-20-a-fast-massively-scalable-distributed-and-parallel-solver-for-poissons-equation.html" id="post-title">A fast, massively scalable, distributed and parallel solver for Poisson's equation</a>
+      <time id="date">2013-10-20</time>
       
           
       
@@ -52,8 +86,8 @@ Here are old or low quality posts that have been archived.
 </li>
 <li>
   <div id="container">
-      <a href="/posts/first-flight-of-my-arducopter/first-flight-of-my-arducopter.html" style="grid-area: header; padding-bottom: 0.5em;">First flight of my Arducopter!</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-07-17</time>
+      <a href="/posts/first-flight-of-my-arducopter/first-flight-of-my-arducopter.html" id="post-title">First flight of my Arducopter!</a>
+      <time id="date">2012-07-17</time>
       
           
       
@@ -61,8 +95,8 @@ Here are old or low quality posts that have been archived.
 </li>
 <li>
   <div id="container">
-      <a href="/posts/adding-authentication-to-sirkel/adding-authentication-to-sirkel.html" style="grid-area: header; padding-bottom: 0.5em;">Adding authentication to Sirkel</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2012-04-23</time>
+      <a href="/posts/adding-authentication-to-sirkel/adding-authentication-to-sirkel.html" id="post-title">Adding authentication to Sirkel</a>
+      <time id="date">2012-04-23</time>
       
           
       
@@ -70,8 +104,8 @@ Here are old or low quality posts that have been archived.
 </li>
 <li>
   <div id="container">
-      <a href="/posts/deler-fra-diy-drones-har-kommet/deler-fra-diy-drones-har-kommet.html" style="grid-area: header; padding-bottom: 0.5em;">Deler fra DIY-drones har kommet.</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2011-10-04</time>
+      <a href="/posts/deler-fra-diy-drones-har-kommet/deler-fra-diy-drones-har-kommet.html" id="post-title">Deler fra DIY-drones har kommet.</a>
+      <time id="date">2011-10-04</time>
       
           
       
@@ -79,8 +113,8 @@ Here are old or low quality posts that have been archived.
 </li>
 <li>
   <div id="container">
-      <a href="/posts/start-pa-quadcopter/start-pa-quadcopter.html" style="grid-area: header; padding-bottom: 0.5em;">Start på QuadCopter</a>
-      <time style="grid-area: date; justify-self: end; padding-left: 1em; padding-bottom: 0.5em;">2011-09-23</time>
+      <a href="/posts/start-pa-quadcopter/start-pa-quadcopter.html" id="post-title">Start på QuadCopter</a>
+      <time id="date">2011-09-23</time>
       
           
       
