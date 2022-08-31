@@ -1,6 +1,6 @@
 ---
 date: 2012-04-23 19:56:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: coding, haskell, Sirkel
 slug: adding-authentication-to-sirkel
 title: Adding authentication to Sirkel

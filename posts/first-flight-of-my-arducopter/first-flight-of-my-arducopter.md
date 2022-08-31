@@ -1,7 +1,7 @@
 ---
 title: First flight of my Arducopter!
 date: 2012-07-17 15:08:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: arducopter, arduino, coding, multirotor, physics, quadcopter, rc
 slug: first-flight-of-my-arducopter
 archived: true

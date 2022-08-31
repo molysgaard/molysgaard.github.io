@@ -1,7 +1,7 @@
 ---
 title: 'The start of something great; Open Aviation Map'
 date: 2012-02-03
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: OAM, OpenAviationMap, OpenStreetMap, OSM
 slug: the-start-of-something-great-open-aviation-map
 ---

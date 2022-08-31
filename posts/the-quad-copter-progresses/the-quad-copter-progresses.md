@@ -1,7 +1,7 @@
 ---
 title: The quad copter progresses
 date: 2012-08-25
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: arduino, multirotor, quad, quadcopter, rc
 slug: the-quad-copter-progresses
 thumbnail: '<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FTr6dLaTg4A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'

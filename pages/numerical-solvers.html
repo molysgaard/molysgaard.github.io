@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Morten Lysgaard">
         <meta name="author" content="Morten Lysgaard">
-        <title>Sirkel released!</title>
+        <title>Numerical solvers</title>
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({
               showMathMenu: false,
@@ -68,22 +68,30 @@
           </nav>
       </header>
       <article>
-          <h1 id="article-title">Sirkel released!</h1>
-          <br/>
-<div>
-<p>The first release of Sirkel was released today! It contains an implementation of the Chord DHT, and a simple storage layer with fault tolerance and replication, much similar to DHash. The DHT uses the not yet released Cloud Haskell framework with it's Erlang primitives for concurrency. It's still in it's very early stages but I've done a lot of testing and it should be reasonably stable.<br />
-<a href="http://hackage.haskell.org/package/sirkel-0.1">Hackage</a><br />
-<a href="https://github.com/molysgaard/Sirkel">Github</a><br />
-<a href="https://github.com/jepst/CloudHaskell">CloudHaskell</a><br />
-Right now, this is what the DHT can do: You can run it on a local network, LAN, and in theory also on hosts directly connected to the internet, no NAT. Each node gets responsebility for a part of the key-space in the DHT. Then you can &quot;put&quot; and &quot;get&quot; all objects that are instances of Binary in and out of it. If a node leaves or disconnects, other nodes dynamically takes over the responsibility of the keys to the left node and no data is lost.<br />
-The protocol is not secure, and there is no authentication, that is, you have to trust all nodes is your system. This is an area of research and it would be really exiting to implement some sort of security into the DHT.</p>
-<p>Now that the DHT layer is complete a lot of new doors have opened. How cool wouldn't it be to make  a distributed file-system with no single point of failure, no master controller? That's one of the things a DHT can achieve, it's structure is totally flat, and no-one is better, has more knowledge or power than anyone else. If you think distributed computing is fun, and would love a hobby project, join me in discovering what can be done with a DHT in Haskell!</p>
-
-</div>
-<div class="info">Posted by Morten Lysgaard on 2011-09-17. </div>
-<div class="hide-on-print">
-  <div class="info">Tags: .</div>
-</div>
+          <h1 id="article-title">Numerical solvers</h1>
+          <h1 id="multifrontal-sparse-symmetric-linear-solver"><span class="header-section-number">1</span> Multifrontal sparse symmetric linear solver</h1>
+<p>Key characteristics:</p>
+<ul>
+<li>Designed for: sparse, symmetric, indefinite systems.</li>
+<li>Efficient for sparse KKT-systems from constrained optimization, saddle point systems and similar from DAEs Differential Algebraic Equations and similar.</li>
+<li>Single-core implementation. Thread-based paralellization planned.</li>
+</ul>
+<h2 id="c-api"><span class="header-section-number">1.1</span> C-API</h2>
+<ul>
+<li>Download: <a href="/files/solvers/liblindefsol.so">liblindefsol.so</a> <a href="/files/solvers/lindefsol.h">lindefsol.h</a></li>
+<li>Tested on Ubuntu 20.04, uses minimal system calls, should work on almost any modern Linux distribution.</li>
+</ul>
+<h1 id="nonlinear-constrained-optimization-solver-compiler"><span class="header-section-number">2</span> Nonlinear constrained optimization solver compiler</h1>
+<p>Based on a nonlinear interior-point penalty method with the multifrontal sparse symmetric linear solver as its main workhorse.</p>
+<p>Key characteristics: * Optimized for fast solutions to medium sized problems, eg. real-time optimal control.</p>
+<p>Following workflow:</p>
+<ul>
+<li>Create nonlinear model description using a <code>.json</code> file.</li>
+<li>Compiler takes as input the <code>.json</code> file, and outputs an optimized nonlinear solver for the given problem.</li>
+<li><p>The optimized linear solver is output as a C-library, with a standard C-interface.</p></li>
+<li>Download: <a href="/files/solvers/liboptimizer.so">liboptimizer.so</a> <a href="/files/solvers/optimizer.h">optimizer.h</a></li>
+<li><p>Tested on Ubuntu 20.04, uses minimal system calls, should work on almost any modern Linux distribution.</p></li>
+</ul>
 
       </article>
       <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless otherwise specified.</footer>

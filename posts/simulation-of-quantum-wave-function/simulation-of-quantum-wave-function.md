@@ -1,7 +1,7 @@
 ---
 title: Simulation of quantum wave function
 date: 2012-02-16
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: coding, physics, simulation
 slug: simulation-of-quantum-wave-function
 ---

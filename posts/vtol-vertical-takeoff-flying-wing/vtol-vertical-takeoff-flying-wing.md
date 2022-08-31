@@ -1,7 +1,7 @@
 ---
 title: VTOL, Vertical Takeoff, Flying Wing
 date: 2014-06-29 21:10:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: arduino, model airplane, multirotor, multiwii, open source, rc, vtol
 slug: vtol-vertical-takeoff-flying-wing
 thumbnail: '<div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/xYRHhSLbvXY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'

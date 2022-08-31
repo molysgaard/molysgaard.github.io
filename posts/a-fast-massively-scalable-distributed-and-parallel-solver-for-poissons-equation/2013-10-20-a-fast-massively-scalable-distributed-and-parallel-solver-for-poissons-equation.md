@@ -1,6 +1,6 @@
 ---
 date: 2013-10-20 09:34:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 slug: a-fast-massively-scalable-distributed-and-parallel-solver-for-poissons-equation
 title: A fast, massively scalable, distributed and parallel solver for Poisson's equation
 archived: true

@@ -1,7 +1,7 @@
 ---
 title: FDM heat equation of isolated rod with dynamic end temparatures
 date: 2013-01-31 15:10:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 slug: fdm-heat-equation-of-isolated-rod-with-dynamic-end-temparatures
 thumbnail: heat2.png
 summary: >

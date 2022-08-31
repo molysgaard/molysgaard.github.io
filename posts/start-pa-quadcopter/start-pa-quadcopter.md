@@ -1,7 +1,7 @@
 ---
 title: Start på QuadCopter
 date: 2011-09-23
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 slug: start-pa-quadcopter
 archived: true
 ---

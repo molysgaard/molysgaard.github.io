@@ -1,7 +1,7 @@
 ---
 title: Film job at ISFIT!
 date: 2013-04-22 07:53:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 slug: film-job-at-isfit
 thumbnail: '<div class="videoWrapper"><iframe src="https://player.vimeo.com/video/62015547?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
 thumbnailtype: video

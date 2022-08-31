@@ -1,7 +1,7 @@
 ---
 title: Firkant, a music player, completely in your browser!
 date: 2012-08-25 14:56:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: ampache, chrome, cloud music, coding, file api, firkant, html5, javascript, open source, web app
 slug: firkant-a-music-player-completely-in-your-browser
 thumbnail: firkant.jpg

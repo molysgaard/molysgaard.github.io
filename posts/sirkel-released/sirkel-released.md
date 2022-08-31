@@ -1,7 +1,7 @@
 ---
 title: Sirkel released!
 date: 2011-09-17
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: Chord, coding, DHT, haskell, Sirkel
 slug: sirkel-released
 ---

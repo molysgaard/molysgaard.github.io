@@ -1,7 +1,7 @@
 ---
 title: 'New tools for OAM: Import data from OSM to OAM in a batch process.'
 date: 2012-02-18 19:10:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: OpenAviationMap
 slug: new-tools-for-oam-import-data-from-osm-to-oam-in-a-batch-process
 ---
