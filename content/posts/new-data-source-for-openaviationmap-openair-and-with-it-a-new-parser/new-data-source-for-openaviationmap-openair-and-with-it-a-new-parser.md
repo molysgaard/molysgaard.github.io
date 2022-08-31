@@ -1,7 +1,7 @@
 ---
 title: New data source for OpenAviationMap, OpenAir, and with it a new parser!
 date: 2012-03-12
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: coding, haskell, OpenAviationMap
 slug: new-data-source-for-openaviationmap-openair-and-with-it-a-new-parser
 summary: >

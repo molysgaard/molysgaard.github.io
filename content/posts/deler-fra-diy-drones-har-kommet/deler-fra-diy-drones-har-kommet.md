@@ -1,7 +1,7 @@
 ---
 title: Deler fra DIY-drones har kommet.
 date: 2011-10-04
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 slug: deler-fra-diy-drones-har-kommet
 archived: true
 ---

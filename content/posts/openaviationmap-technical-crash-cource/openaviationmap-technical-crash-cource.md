@@ -1,7 +1,7 @@
 ---
 title: OpenAviationMap technical crash cource
 date: 2012-02-03 23:15:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: OAM, OpenAviationMap, OpenStreetMap, OSM
 slug: openaviationmap-technical-crash-cource
 ---

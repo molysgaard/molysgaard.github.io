@@ -1,7 +1,7 @@
 ---
 title: Barnes & Hut orbital simulator
 date: 2011-06-30 22:18:00
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: algorithms, Barnes amp; Hut, coding, haskell, orbit, simulator
 slug: barnes-hut-orbital-simulator
 ---

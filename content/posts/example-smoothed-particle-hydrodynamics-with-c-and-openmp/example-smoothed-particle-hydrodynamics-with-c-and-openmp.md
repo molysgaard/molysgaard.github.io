@@ -1,7 +1,7 @@
 ---
 title: Example Smoothed-particle hydrodynamics with C and OpenMP
 date: 2014-01-29
-author: Morten Olsen Lysgaard
+author: Morten Lysgaard
 tags: algorithms, c, coding, openmp, sph
 slug: example-smoothed-particle-hydrodynamics-with-c-and-openmp
 thumbnail: '<div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
