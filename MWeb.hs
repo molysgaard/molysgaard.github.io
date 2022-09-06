@@ -30,12 +30,17 @@ main = do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
-    -- pages
+    -- markdown pages
     match "content/pages/*.md" $ do
         route contentMarkdownRoute
         compile $ mathCompiler
             >>= loadAndApplyTemplate "templates/default.html" postCtx
         --    >>= relativizeUrls
+    -- html pages
+    match "content/pages/*.html" $ do
+        route contentMarkdownRoute
+        compile $ mathCompiler
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
     -- posts
     match "content/posts/*/*.md" $ do
         route contentMarkdownRoute
