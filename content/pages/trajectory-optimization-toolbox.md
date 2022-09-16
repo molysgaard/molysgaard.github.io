@@ -2,7 +2,24 @@
 title: Trajectory Optimization toolbox
 ---
 
+<video style="width:100%;" autoplay="true" muted="true" loop="true"><source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4"></video>
+
+# Download
+Download Linux AppImage running the above example **[using this link](/files/multicopter-trajectory-optimization-0.1.0-x86_64.AppImage)**.
+Packaged as an [AppImage](https://appimage.org/), runnable on any Linux machine.
+
+To run, do the following:
+
+```bash
+cd $HOME/Downloads # change to your downloads directory
+chmod u+x multicopter-trajectory-optimization-0.1.0-x86_64.AppImage # give user execute permission
+./multicopter-trajectory-optimization-0.1.0-x86_64.AppImage # Run trajectory optimization demo
+```
+
+If you run into problems, send me an email on [morten at lysgaard dot no](malito:morten@lysgaard.no).
+
 # Intoduction:
+
 Some of the hardest problems in control systems is handling non-linear dynamics well, taking into account actuator saturation or rate limits, taking into account large delays or inertia within a system. Conventional control theory is focused on linear systems, and is not equipped to handle such problems. State space methods, like LQR-methods, gives controllers that are locally optimal but only for a linearized model around the current state. This works well for problems where there is no delays, or long-term planning required to compute the best control input. 
 
 Trajectory Optimization, is a branch of control theory that combines mathematical models of a system with solvers from optimization to obtain controllers that can handle all of the above challenges.
@@ -32,9 +49,8 @@ An excellent introduction to the topic is covered by [Kelly](https://doi.org/10.
 
 I have developed software, which form a compiler for general non-convex, constrained, smooth, nonlinear, optimization problems.
 On top of this software, the user can use his transcription tool of choice to generate a NLP problem.
-I have also developed a rudamentary transcription tool using SymPy and Python.
-
-The components are:
+I have also developed a rudamentary transcription tool using SymPy and Python to test and debug the software stack.
+The main components are:
 
 ## Transcription-compiler:
 A Python library using [SymPy](https://www.sympy.org/) to generate transcriptions of trajoctory optimization problems from symbolic SymPy description of a system. These NLP-problems are feed into the NLP-compiler
@@ -69,14 +85,19 @@ This makes it possible to express equality constraints by letting $\mathbf{c}_{\
 one-sided constraints eg. by letting $\mathbf{c}_{\text{l}_i} = -\infty, \mathbf{c}_{\text{h}_i} = k$ and so forth.
 
 ## NLP-compiler:
-The NLP-compiler takes as input a symbolic representation of the NLP-problem output by TRAJ-compiler.
+Written in pure Rust.
+The NLP-compiler takes as input a symbolic representation of the NLP-problem output by Transcription-compiler.
 It then analyses, simplifies, and generates optimized Rust code for evaluating the problems objective function, gradient, Hessian, Lagrangian etc.
 This generated code is compiled and linked together with the IP-solver to generate a specialized NLP-solver that is efficient for solving the specific problem.
 
 ## IP-solver:
-This is an interior point NLP-solver inspired by [IPOPT](https://doi.org/10.1007/s10107-004-0559-y) and similar works in the literature. The solver is implemented in pure Rust, and uses my LINDEF-solver solver to do most of the heavy lifting.
+Written in pure Rust.
+This is an interior point NLP-solver inspired by [IPOPT](https://doi.org/10.1007/s10107-004-0559-y) and similar works in the literature.
+For the interior point method, most of the computational time is spendt solving sparse indefinite linear systems.
+For this, my LINDEF-solver is used.
 
 ## LINDEF-solver:
+Written in pure Rust.
 This is a sparse, multifrontal, indefinite, direct, linear systems solver.
 It uses 1x1 and 2x2 numerical pivoting, and supports matrix ordering methods to reduce factorization fill-in.
 It is able to compute the inertia of the factorized matrix, which is crucial for interior point algorithms.
@@ -86,7 +107,7 @@ It is inspired by the works of [Duff and Reid](https://dl.acm.org/doi/10.1145/35
 From a users perspective, there are only two components. First, the user writes a script that outputs an NLP-problem of the type [@eq:nlp-problem] in a `.json` file.
 This problem description is given as input to the NLP-compiler.
 The NLP-compiler outputs a shared library which contains an efficient solver for the given NLP problem and a C-header for linking to the shared library.
-The user can then use this shared library from any programming language that is able to call standard C-api shared libraries, which is just about any programming language.
+The user can then use this shared library from any programming language that is able to call standard C-api shared libraries giving great interoperabilityinteropability.
 
 # Example problem: 2D multicopter, trajectory optimization
 In the above video example, the following model is used:
@@ -103,7 +124,7 @@ $$
 u_0 &\in (0, u_{0,\max}) \\
 u_1 &\in (0, u_{0,\max}) \\
 \end{align}
-$$
+$${#eq:multicopter-dynamics}
 where $\mathbf{p}$ is the position vector $\mathrm{[m]}$,
 $\mathbf{v}$ is the velocity vector $\mathrm{[m/s]}$,
 $\mathbf{a}$ is the acceleration vector $\mathrm{[m/s^2]}$,
@@ -128,13 +149,15 @@ l &= 0.225 \\
 I &= 2 \left( \frac{l}{2} \right)^2 m_\text{motor} + \frac{m_\text{body}}{12} 2 l_\text{body}^2 \\
 g &= 9.81 \\
 \end{aligned}
-$$
+$${#eq:multicopter-parameters}
 Here we approximate the body as composed of 3 objects, 2 point-mass motors on each arm, and a body in the middle modelled as a square with uniform density.
 We then use the [equations for inertia](https://en.wikipedia.org/wiki/List_of_second_moments_of_area) to derive the equation for $I$.
 
-The Trajectory-compiler generates a NLP-solver for the trajectory optimization problems coming from these equations, and this solver is run each frame
-and the drone is visualized in the above example.
-*You can also download your own runnable example of as a sandboxed Linux executable by* **[downloading this AppImage Link](/files/demos/mpc-multico)**.
+To create the above demo, I created a small visualization using Rust and a vector graphics library.
+The visualization simulates the dynamics from [@eq:multicopter-dynamics],
+with the parameters from [@eq:multicopter-parameters], and uses an NLP-solver generated by the above mentioned software pipeline
+to calculate the $u_0$ and $u_1$ values for the next simulation step. Since everything is written in pure Rust code, the result is
+a statically linked executable, that is trivial to package as a portable AppImage executable.
 
 # Open source
 I have not made the code for this toolbox open source yet, but I would really like to distribute this so that others could play with it and create something usefull. If you are interested, please contact me by [morten at lysgaard dot no](mailto:morten@lysgaard.no).
