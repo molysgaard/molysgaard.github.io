@@ -137,4 +137,4 @@ and the drone is visualized in the above example.
 *You can also download your own runnable example of as a sandboxed Linux executable by* **[downloading this AppImage Link](/files/demos/mpc-multico)**.
 
 # Open-source
-I have not made the code for this toolbox open source yet, but I would really like to distribute this so that others could play with it and create something usefull. Please contact me if you are interested [write me](mailto:morten@lysgaard.no).
+I have not made the code for this toolbox open source yet, but I would really like to distribute this so that others could play with it and create something usefull. If you are interested, please contact me by [morten at lysgaard dot no](mailto:morten@lysgaard.no).
