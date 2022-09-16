@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Morten Lysgaard">
-        <meta name="author" content="Morten Lysgaard">
-        <title>Kontrol programming language</title>
-        <script type="text/x-mathjax-config">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morten Lysgaard">
+  <meta name="author" content="Morten Lysgaard">
+  <title>Kontrol programming language</title>
+  <script type="text/x-mathjax-config">
             MathJax.Hub.Config({
               showMathMenu: false,
               jax: ["input/TeX","output/CommonHTML"],
@@ -40,45 +41,52 @@
             		"HTML-CSS": { fonts: ["STIX"] }
             });
         </script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/css/default.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/default.css" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-24607697-1');
-        </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-24607697-1');
+  </script>
 
-    </head>
-    <body class="tex2jax_ignore">
-      <header class="hide-on-print">
-          <div id="blog-title">
-              <a href="/">Morten Lysgaard</a>
-          </div>
-          <nav>
-              <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/pages/numerical-solvers.html">Numerical solvers</a></li>
-                  <li><a href="/pages/kontrol-lang.html">Programming Language Implementation</a></li>
-                  <li><a href="/archive.html">Archive</a></li>
-              </ul>
-          </nav>
-      </header>
-      <article>
-          <h1 id="article-title">Kontrol programming language</h1>
-          <p>The Kontrol programming language is a Synchronous programming language.</p>
+</head>
+
+<body class="tex2jax_ignore">
+  <header class="hide-on-print">
+    <div id="blog-title">
+      <a href="/">Morten Lysgaard</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <!--li><a href="/pages/cv.html">CV</a></li-->
+        <li><a href="/pages/trajectory-optimization-toolbox.html">Trajectory Optimization Toolbox</a></li>
+        <li><a href="/pages/numerical-solvers.html">Numerical solvers</a></li>
+        <li><a href="/pages/kontrol-lang.html">Programming Language Implementation</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
+  <article>
+    <h1 id="article-title">Kontrol programming language</h1>
+    <p>The Kontrol programming language is a Synchronous programming language.</p>
 <p>The language is designed with inspiration from both <a href="https://www.di.ens.fr/~pouzet/lucid-synchrone/index.html">Lucid Synchrone</a>, <a href="https://en.wikipedia.org/wiki/Lustre_(programming_language)">Lustre</a>, <a href="https://en.wikipedia.org/wiki/Haskell">Haskell</a>, <a href="https://en.wikipedia.org/wiki/Standard_ML">Standard ML</a> and <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>.</p>
 <p>It is currently implemented in Haskell.</p>
 <p>It contains a REPL, and a code generator able to generate native machine code executing the update loop of the program.</p>
 
-      </article>
-      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless otherwise specified.</footer>
+  </article>
+  <footer class="hide-on-print">© 2011 -
+    <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless
+    otherwise specified.
+  </footer>
 
-    </body>
+</body>
+
 </html>
 
 </html>

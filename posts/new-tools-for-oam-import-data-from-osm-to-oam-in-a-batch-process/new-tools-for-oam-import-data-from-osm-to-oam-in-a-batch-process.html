@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Morten Lysgaard">
-        <meta name="author" content="Morten Lysgaard">
-        <title>New tools for OAM: Import data from OSM to OAM in a batch process.</title>
-        <script type="text/x-mathjax-config">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morten Lysgaard">
+  <meta name="author" content="Morten Lysgaard">
+  <title>New tools for OAM: Import data from OSM to OAM in a batch process.</title>
+  <script type="text/x-mathjax-config">
             MathJax.Hub.Config({
               showMathMenu: false,
               jax: ["input/TeX","output/CommonHTML"],
@@ -40,37 +41,40 @@
             		"HTML-CSS": { fonts: ["STIX"] }
             });
         </script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/css/default.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/default.css" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-24607697-1');
-        </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-24607697-1');
+  </script>
 
-    </head>
-    <body class="tex2jax_ignore">
-      <header class="hide-on-print">
-          <div id="blog-title">
-              <a href="/">Morten Lysgaard</a>
-          </div>
-          <nav>
-              <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/pages/numerical-solvers.html">Numerical solvers</a></li>
-                  <li><a href="/pages/kontrol-lang.html">Programming Language Implementation</a></li>
-                  <li><a href="/archive.html">Archive</a></li>
-              </ul>
-          </nav>
-      </header>
-      <article>
-          <h1 id="article-title">New tools for OAM: Import data from OSM to OAM in a batch process.</h1>
-          <br/>
+</head>
+
+<body class="tex2jax_ignore">
+  <header class="hide-on-print">
+    <div id="blog-title">
+      <a href="/">Morten Lysgaard</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <!--li><a href="/pages/cv.html">CV</a></li-->
+        <li><a href="/pages/trajectory-optimization-toolbox.html">Trajectory Optimization Toolbox</a></li>
+        <li><a href="/pages/numerical-solvers.html">Numerical solvers</a></li>
+        <li><a href="/pages/kontrol-lang.html">Programming Language Implementation</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
+  <article>
+    <h1 id="article-title">New tools for OAM: Import data from OSM to OAM in a batch process.</h1>
+    <br/>
 <div>
 <p>I've done some work on migrating data from the master OSM database over to our OAM database. The tricky thing here is that when you download something from OSM, it expects any modifications etc. to be uploaded to OSM, not another database. To work around this problem I've written an tool called <a href="https://github.com/molysgaard/OsmXmlTool">OsmXmlTool</a> in Haskell. Put simply it does this. Parse an OSM xml file. Create an internal representation of the data in it using haskells Algebraic Datatypes. Then it modifies this representation following several rules; all entities has to get new unique id's etc. Afther that, the datatype is converted back to XML. This data can be loaded into JOSM, fine tuned and uploaded.<br />
 To give a idea of how much work this tool saves us. Today i downloaded a bounding box of Norway with all aviation related features. I put it trough my tool, and after that into JOSM. Some minor tweaks to some tags and uploaded. Took me around 10 minutes. In those 10 minutes i had populated the database of 3000 new entities, runways, hangars, helipads, taxiways you name it. Haskell is awesome, OSM too!<br />
@@ -83,10 +87,14 @@ If you wonder how anything is done or have any questions, pop a comment! I'm may
   <div class="info">Tags: .</div>
 </div>
 
-      </article>
-      <footer class="hide-on-print">© 2011 - <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless otherwise specified.</footer>
+  </article>
+  <footer class="hide-on-print">© 2011 -
+    <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless
+    otherwise specified.
+  </footer>
 
-    </body>
+</body>
+
 </html>
 
 </html>
