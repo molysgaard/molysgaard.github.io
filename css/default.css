@@ -264,10 +264,19 @@ h3 code {
     text-transform: none;
 }
 
+/* margin on bottom of lists */
 ul,
 ol {
-    margin: 0 0 1em 15px;
+    margin: 0 0 1em 1em;
     padding: 0;
+}
+
+/* Nested lists should have consistent margins and indentation */
+ul>*>ol,
+ol>*>ul,
+ul>*>ul,
+ol>*>ol {
+    margin: 0 0 0 1em;
 }
 
 ul {
@@ -276,6 +285,7 @@ ul {
 
 li {
     line-height: 1.5em;
+    list-style-type: "- ";
 }
 
 ul li {
@@ -350,7 +360,7 @@ h1 {
     font-size: 1.7em;
     line-height: 1.7em;
     border-bottom: 1px solid #000;
-    margin-bottom: 0px;
+    margin-bottom: 0.5em;
 }
 
 h2 {
