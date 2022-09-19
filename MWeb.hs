@@ -76,14 +76,20 @@ main = do
                 >>= loadAndApplyTemplate "templates/default.html" (indexCtx `mappend` postCtx)
             --    >>= relativizeUrls
     -- Index
-    match "content/index.html" $ do
-        route contentRoute
-        let indexCtx = field "posts" $ \_ ->
-                            postList (filterArchived False)
-        compile $ getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" (indexCtx `mappend` postCtx)
-            --    >>= relativizeUrls
+    --match "content/posts.html" $ do
+    --    route contentRoute
+    --    let indexCtx = field "posts" $ \_ ->
+    --                        postList (filterArchived False)
+    --    compile $ getResourceBody
+    --            >>= applyAsTemplate indexCtx
+    --            >>= loadAndApplyTemplate "templates/default.html" (indexCtx `mappend` postCtx)
+    --        --    >>= relativizeUrls
+    -- Index
+    match "content/index.md" $ do
+        route contentMarkdownRoute
+        compile $ mathCompiler
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+        --    >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler
 
