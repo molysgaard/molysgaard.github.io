@@ -11,7 +11,7 @@ This video demonstrates some of the automatic tests that run in our CI solution.
 The tests are scripted in a DSL, embedded in C++, letting us express arbitrary missions,
 assertions that lead to test failure, and arbitrary events that happens to the simulated world during the mission.
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-automatic-test.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-automatic-test.mp4" type="video/mp4">
 </video>
@@ -25,7 +25,7 @@ A marching cubes algorithm is run on this signed distance field to generate a me
 in the field. Correct normals and tangents are computed, as well as a automatically generated UV-map
 using the [ARAP](https://libigl.github.io/tutorial/#as-rigid-as-possible) algorithm.
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-smooth-terrain.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-smooth-terrain.mp4" type="video/mp4">
 </video>
@@ -35,7 +35,7 @@ Voxel grid datastructure, with accompanying GPU-visualization.
 Uses a dynamic index buffer, together with a static vertex buffer, which saves quite some CPU-GPU memory traffic.
 Supports raycasting for dynamically building probabilistic occupancy maps, much like the technique used in [Google Cartographer](https://google-cartographer.readthedocs.io/en/latest/)
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-voxel-grid.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-voxel-grid.mp4" type="video/mp4">
 </video>
@@ -44,7 +44,7 @@ Supports raycasting for dynamically building probabilistic occupancy maps, much 
 This video demonstrates what happens with the drone state estimates and control system
 when unrealistically large noise is injected into the GPS position and velocity estimates.
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-gps-noise.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-gps-noise.mp4" type="video/mp4">
 </video>

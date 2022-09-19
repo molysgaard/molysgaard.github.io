@@ -5,119 +5,32 @@ title: Sample projects
 <details>
 <summary><a href="/pages/robotics-simulator.html"><span class="detail-header">Robotics Simulator</span>
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-gps-noise.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-gps-noise.mp4" type="video/mp4">
 </video>
+</a>
 
 One of the main challenges with developing drones, is the amount of physical testing required. Back in 2015-2016 when we were in the most intense period of development of the Staaker drone, I realized that if we could make our testing and verification more effective, we could improve our development speed drastically. This spawned the simulator project.
-</a></summary>
-In day to day development the simulator is your source of truth. 
-
-<h3>Some features I implemented</h3>
-- Overall architecture.
-    - Focus separation between rendering and simulation/physics.
-    - Rolled our own C++ entity component system system.
-- Choice of rendering engine, Filament physically based renderer, after a survey spanning everything from Unreal to Ogre 3D.
-- Physics motor, developed from scratch in C++ using Eigen.
-    - Very accurate integration of multirotor ODEs using Runge-Kutta methods for linear parts and quaternion exponential maps for orientation.
-    - As a proof of concept I integrated DART physics motor, but as we are flying, we did not have that much use for its advanced support of contacts.
-    - Ended up just rolling my own rudamentary collision simulation.
-    - Would integrate DART or similar if advanced collision handling was needed.
-- Continuous integration:
-    - Developed a domain specific language for specifying flight scenarios.
-    - Very flexible language, executed by the simulator when run in test mode, able to express:
-        - What to do, eg. a mission and its sub-steps
-        - Abnormal behaviour, like suddenly removing a motor mid flight or receiving garbled gyro-data
-        - What to check, arbitrary assertions that can be run at any time during the simulation, and that has ability to inspect the whole simulator state.
-    - This language was used to create a large test suite, that was run on each commit software in the loop.
-    - This made it possible to develop autopilot code changes with great confidence, and accelerated our development process enormously
-- Visualizations: 
-    - Colored point clouds
-    - Voxelgrids
-    - Marching cubes on smooth signed distance functions for arbitrary 3D terrain generation
-    - 3D cubic splines
-- Simulated sensors:
-    - Gyroscope, accelerometer, barometer and magnetometer with realistic noise characteristics
-    - GPS with a complex noise model simulating not just standard Gaussian noise
-    - RGB cameras, available for visual navigation algorithms
-    - Depth cameras, available for visual navigation algorithms
-    - LIDAR, rudamentary simulation, available for navigation algorithms
-- Hardware in the loop simulation
-- Software in the loop simulation
-
-<!--
-<h3>Motivation</h3>
-The goal of the project was simple. We were able to test our system between 1 and 3 times a day by going out doing field tests. If we had a crash, it usually cost us a day of repairs before we were ready to test again. If the weather was too bad, we could not do tests. I estimate that between 1/2 and 2/3 of our time was lost in overhead related to field testing and repairs.
-
-My vision was to be able to test our drones, like most software is tested. Write, compile, run and inspect, repeat. Each developer should be able to do
-10-50 test every day, independently of each other, and without the fear of crashing.
-
-It was clear that we needed a simulator, and it would need to be a rich simulator, not just some python scripts creating some plots.
-
-<h3>Graphics</h3>
-I used some time to find the sweet spot for the graphics. I tried full fledged game engines, like Unreal, but it was to all-encompassing to easily integrate like we would like.
-Then we tried simple 3D motors like Ogre 3D, but it did not render anything that looked like real images.
-We were simulating visual navigation, depth vision, LIDAR and similar, Ogre would not cut it.
-In the end, we settled for a then prototype library, which since has become very mature. The Filament physically based rendering engine.
-It was the perfect sweet-spot. It is a C++ library, not a software platform, it renders with very high realism, the biggest limit on realism
-is the amount of work put into the scenes, and not the rendering engine itself.
-
-<h3>Software architecture</h3>
-For overall software architecture, we chose to implement our own entity component system. This is common in the game engines, and
-it fit great for our use case as well.
-
-<h3>Simulation of gyroscope, accelerometer, barometer, magnetometer and GPS</h3>
-To simulate a sensor, it is important to understand the stochastics of the signal.
-For the gyroscope, accelerometer, barometer and magnetometer it is relatively easy to get a 
-lower bound for the noise you can expect by simply capturing a time series from the sensor while it is
-on your desk.
-In reality, I had to estimate far larger values for noise than this, because on a real drone system
-there is vibrations, electromagnetic interference, radio noise etc.
-For realistic values, I had to create a setup that faked flying well enough, for each sensor, and
-then capture a time series from this.
-
-Lastly, there is GPS. To not get too specific, for GPS I had to develop a considerably more
-complex error model than for the other sensors, because GPS is a much more complex sensor system, with a lot more
-physics affecting the measurement. 
-
-<h3>Software and hardware in the loop simulation</h3>
-Our autopilot system was architected around our own in-house, hard-real-time message-passing system.
-A bit like a statically typed, hard-real-time ROS message system.
-All the different tasks running on the drone would coordinate and communicate using these messages, and there was no
-shared data other than message passing.
-
-This meant that when we wanted to do simulation of our stack, it was in really easy.
-Create a special message, that when the drone receives it, silences the sensor drivers. They are still running, but when
-they want to publish new sensor readings, they simply skip the publication step.
-Then inject simulated sensor readings with the appropriate noise and real-time characteristics to the autopilot instead,
-and the autopilot now behaves just as if it was reading real sensor readings.
-
-For software in the loop simulation, we created a hardware abstraction layer for our autopilot software that made it run on Linux.
-We then ported our message passing system so that it would also be able to run on Linux.
-With these two components in place, running our autopilot on Linux, and talking trough it using message passing was as easy as publishing and subscribing
-to the right messages from in our simulator.
-
-For hardware in the loop simulation we chose to use a direct serial connection with the drone which we could use to send serialized messages from our message passing system over.
-This way, our simulator could send and receive messages from the autopilot with a rate of 1000Hz and a jitter of less than 1ms.
--->
-
+</summary>
 </details>
 
 <details>
 <summary><a href="/pages/trajectory-optimization-toolbox.html"><span class="detail-header">Trajectory optimization toolbox</span>
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4">
 </video>
+</a>
 
 I have had a long fascination for trajectory optimization. It started back in 2016 when I was researching better ways to handle actuator saturation for drone control systems while developing the Staaker Drone.
-</a>
 </summary>
 </details>
 
 <details>
 <summary><a href="/pages/autonomous-rail-landing.html"><span class="detail-header">Autonomous landing on railways tracks</span>
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.mp4" type="video/mp4">
 </video>

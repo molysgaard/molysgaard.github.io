@@ -12,7 +12,7 @@ The landing controller first positions the drone between the rails,
 then it starts while keeping control of its yaw.
 Everything using the 3D point cloud data as input.
 
-<video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true">
+<video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.mp4" type="video/mp4">
 </video>

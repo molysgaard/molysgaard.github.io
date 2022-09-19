@@ -49,6 +49,12 @@
             ".         .       .";
         grid-template-rows: auto 1fr auto 4em;
     }
+
+}
+
+.video-width {
+    max-width: min(700px, 100%);
+    max-height: min(400px, 100%);
 }
 
 #full-content {
