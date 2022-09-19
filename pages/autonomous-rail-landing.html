@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morten Lysgaard">
+  <meta name="author" content="Morten Lysgaard">
+  <title>Autonomous Rail Landing</title>
+  <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              showMathMenu: false,
+              jax: ["input/TeX","output/CommonHTML"],
+              extensions: ["tex2jax.js"],
+              messageStyle: "none",
+                tex2jax: {
+                  processEscapes: true,
+                  ignoreClass: "tex2jax_ignore",
+                  processClass: "math"
+                },
+              TeX: { 
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js"],
+                Macros: { 
+                    R: '{\\mathbb{R}}', 
+                    N: '{\\mathbb{N}}', 
+                    Z: '{\\mathbb{Z}}', 
+                    C: '{\\mathbb{C}}', 
+                    F: '{\\mathbb{F}}', 
+                    argmin: '{\\mathop{\\operatorname*{arg\\,min}}}',
+                    argmax: '{\\mathop{\\operatorname*{arg\\,max}}}',
+                    mex: '{\\mathop{\\operatorname{mex}}}', 
+                    lcm: '{\\mathop{\\operatorname{lcm}}}',
+                    bigtriangleright: '{\\mathop{\\Large \\triangleright}}',
+                    bigtriangleleft: '{\\mathop{\\Large \\triangleleft}}',
+                    set: ['\\left\\{ #1 \\right\\}',1],
+                    floor: ['\\left\\lfloor #1 \\right\\rfloor',1],
+                    ceil:  ['\\left\\lceil #1 \\right\\rceil',1],
+                    abs:  ['\\left| #1 \\right|',1]
+                 } 
+                },
+                "HTML-CSS": { fonts: ["STIX"] }
+            });
+        </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/default.css" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-24607697-1');
+  </script>
+
+</head>
+
+<body class="tex2jax_ignore">
+  <header class="hide-on-print">
+    <div id="blog-title">
+      <a href="/">Morten Lysgaard</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <!--li><a href="/pages/cv.html">CV</a></li-->
+        <li><a href="/pages/trajectory-optimization-toolbox.html">Trajectory Optimization Toolbox</a></li>
+        <li><a href="/pages/robotics-simulator.html">Robotics Simulator</a></li>
+        <li><a href="/posts.html">Posts</a></li>
+        <!--li><a href="/archive.html">Archive</a></li-->
+      </ul>
+    </nav>
+  </header>
+  <article>
+    <h1 id="article-title">Autonomous Rail Landing</h1>
+    <h1 id="demo-video"><span class="header-section-number">1</span> Demo video</h1>
+<p>This video demonstrates the simulation of the full rail landing stack in the <a href="/pages/robot-simulator.html">Robot Simulator</a>. The blue markers are points that the tree-RANSAC clasifier flags as part of a rail, the red markers are all other points.</p>
+<p>The landing controller first positions the drone between the rails, then it starts while keeping control of its yaw. Everything using the 3D point cloud data as input.</p>
+<video class="video-width" autoplay="true" muted="true" loop="true">
+<source src="/files/videos/robot-simulator/robot-simulator-rail-landing.webm" type="video/webm">
+<source src="/files/videos/robot-simulator/robot-simulator-rail-landing.mp4" type="video/mp4">
+</video>
+<h1 id="introduction"><span class="header-section-number">2</span> Introduction</h1>
+<p>The goal of this subproject was to demonstrate that a drone can:</p>
+<ul>
+<li>Autonomously navigate to a rail.</li>
+<li>Localize the rail using local vision sensors.</li>
+<li>Plan and execute a smooth track-landing using local vision sensors.</li>
+</ul>
+<p>To ease the development, a 500mm size drone was used as a research vehicle. The tech stack was the following:</p>
+<ul>
+<li>500mm size drone</li>
+<li>Staaker Autopilot</li>
+<li>Small onboard ARM64 Linux computer</li>
+<li>Intel RealSense stere depth camera for visual input data</li>
+</ul>
+<p>The vision, estimation and control stack was fully implemented by me, and consisted of the following C++ pipeline. The RealSense camera would be configured for minimal latency and filtering. A custom C++ RANSAC library was developed, and hand tuned for 20Hz performance on a very weak ARM64 linux single board computer. Using the RANSAC library, I designed a chain of RANSAC filters to isolate the rails from all the other points in the pointcloud with very high robustness, low latency, and 20Hz throughput. Because the method was purely based on the geometry of the rails, it was extremely robust to common issues with vision systems. It would easily handle any visual changes like lighting conditions, varying degrees of rust, leaves on the track etc. Since it was based on RANSAC filtering, the algorithm was also very robust against noise in the point cloud data, things like shrubs, leaves, straws, signpoles etc. would not confuse the filter.</p>
+<p>Using 3D transformations the Linux computer would continuously produce a stream of 3D-point-pairs, which represented the current position of the rail in the drones body frame. This stream would then be feed into a custom rail-landing control system. This system would home the drone on the rail, and a control law would lower the drone carefully, while maintaining contol of x,y-position and yaw. The control law was designed to be robust in such a way that if the drone was divering from its planned path, it would ascend untill it's margin for error was large enough to retry.</p>
+<p>The control signal from the rail-landing controller would be feed as low level NED-velocity commands to the Staaker Autopilot system. And the Staaker Autopilot system would execute these using its control system to safely land.</p>
+<h1 id="simulation"><span class="header-section-number">3</span> Simulation</h1>
+<p>To develop visual navigation algorithms with confidence, I build a simulation of the landing task in our simulator. It leverages custom shaders to generate a simulated RealSense depth camera, which is then feed trough the same software stack that runs on the real drone. The control signal from the software stack is then feed back into the simulator, to complete the loop.</p>
+<p>In the video you can se the ground truth drone (white drone), estimated position (red drone), and estimated position and orientation (green). You can see a point cloud underneath the drone. The tree of RANSAC classifiers is used to colorize the points to blue if they belog to the rail, and red if they do not. Simulations like this are invaluable during development. To be able to visualize how the robot is thinking, is key to develop a good robotics systems.</p>
+
+  </article>
+  <footer class="hide-on-print">© 2011 -
+    <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless
+    otherwise specified.
+  </footer>
+
+</body>
+
+</html>
+
+</html>
