@@ -10,7 +10,7 @@ Jeg har startet et nytt prosjekt, bygging av et quadrocopter. Dette er
 en avansert fjerstyrt flyvende platform. Her er en video som forklarer
 litt:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3CR5y8qZf0Y?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/3CR5y8qZf0Y?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Jeg gikk for Ardupilot Mega fra DIYdrones siden denne kjører på
 Arduinoplatformen som gjør at jeg kan programmere til den selv. Motorer

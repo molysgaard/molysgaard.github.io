@@ -62,7 +62,7 @@
       <a href="/">Morten Lysgaard</a>
     </div>
     <nav>
-      <ul>
+      <ul style="display: inline-block;">
         <li><a href="/">Home</a></li>
         <!--li><a href="/pages/cv.html">CV</a></li-->
         <li><a href="/pages/trajectory-optimization-toolbox.html">Trajectory Optimization Toolbox</a></li>
@@ -137,10 +137,12 @@ Motor saturation handling
 </h3>
 <p>Quadcopter controller design would be easy, if it wasn't for saturation. The reason is that in the control system, information flows from the slow dynamics, to the fast dynamics. Position -&gt; velocity -&gt; attitude -&gt; rates -&gt; motor setpoints. First when some motor setpoints have been computed, you will know if any of the motors will saturate. If none of the motors saturate, you now have the problem of propagating backwards trough the control laws the saturation, trying to change the setpoints so that the saturation disappears.</p>
 <p>In the Staaker drone, yaw-rate is always sacrificed first, if saturation is detected. This is because a quadrotor can fly safely as long as it is able to measure its yaw, while it does not need to control it. A fascinating example of this is in this video:</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/t369aSInq-E?start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe src="https://www.youtube-nocookie.com/embed/t369aSInq-E?start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p></details></p>
-<p><details> <summary><span class="detail-header">Nordic Unmanned Railway Robot Phase 1</span> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/srBggRXdrAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><details> <summary><span class="detail-header">Nordic Unmanned Railway Robot Phase 1</span></p>
+<iframe src="https://www.youtube-nocookie.com/embed/srBggRXdrAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p>This project was an initial technical demonstrator. The goal was to create a drone platform that is physically capable of driving on rails and flying, as well as landing on them. </summary></p>
 <h3>
 Drone platform
