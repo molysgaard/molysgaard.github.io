@@ -4,7 +4,7 @@ date: 2014-01-29
 author: Morten Lysgaard
 tags: algorithms, c, coding, openmp, sph
 slug: example-smoothed-particle-hydrodynamics-with-c-and-openmp
-thumbnail: '<div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
+thumbnail: '<div class="videoWrapper"><iframe src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
 thumbnailtype: video
 ---
 
@@ -22,7 +22,7 @@ showing the live rendering is embedded below.\
  
 
 <div class="separator" style="clear: both; text-align: center;">
-<div class="videoWrapper"><iframe width="580" height="320" src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="videoWrapper"><iframe src="https://www.youtube-nocookie.com/embed/Jbybort1F5Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div></div>
 
 As the video shows the liquid is extremely pressure driven and thus

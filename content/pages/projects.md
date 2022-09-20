@@ -115,7 +115,7 @@ I have had a long fascination for trajectory optimization. It started back in 20
 
 <details>
 <summary><span class="detail-header">Nordic Unmanned Railway Robot Phase 1</span>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/srBggRXdrAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/srBggRXdrAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This project was an initial technical demonstrator.
 The goal was to create a drone platform that is physically capable of driving on rails and flying, as well as landing on them.
@@ -207,7 +207,7 @@ If none of the motors saturate, you now have the problem of propagating backward
 
 In the Staaker drone, yaw-rate is always sacrificed first, if saturation is detected. This is because a quadrotor can fly safely as long as it is able to measure its yaw, while it does not need to control it. A fascinating example of this is in this video:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/t369aSInq-E?start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/t369aSInq-E?start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </details>
 
