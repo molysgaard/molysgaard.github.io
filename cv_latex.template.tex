@@ -15,6 +15,8 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{multirow,tabularx}
 % change default list style
 \setlist[itemize]{label=-}
 
@@ -70,10 +72,10 @@ $endif$
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://mortenlysgaard.com/}{\Large Morten Lysgaard}} & Email : \href{mailto:morten@lysgaard.no}{morten@lysgaard.no}\\
-  \href{http://mortenlysgaard.com/}{http://www.mortenlysgaard.com} & Mobile : +47 93849899 \\
-  \href{https://www.linkedin.com/in/morten-olsen-lysgaard-37653858/}{LinkedIn: https://www.linkedin.com/in/morten-olsen-lysgaard-37653858/}\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}cc}
+    \textbf{\href{http://mortenlysgaard.com/}{\Large Morten Lysgaard}} & Email : \href{mailto:morten@lysgaard.no}{morten@lysgaard.no} & \multirow{3}{*}{\includegraphics[width=8em]{files/images/profile-outdoors.jpeg}} \\
+    \href{http://mortenlysgaard.com/}{http://www.mortenlysgaard.com} & Mobile : +47 93849899 & \\
+    \multicolumn{2}{l}{\href{https://www.linkedin.com/in/morten-olsen-lysgaard-37653858/}{LinkedIn: https://www.linkedin.com/in/morten-olsen-lysgaard-37653858/}} & \rule[-4em]{0pt}{0pt} \\
 \end{tabular*}
 
 \vspace{3mm}
