@@ -198,7 +198,7 @@ p {
 }
 
 p+p {
-    text-indent: 1.5em;
+    text-indent: 0.0em;
 }
 
 .references p+p {
