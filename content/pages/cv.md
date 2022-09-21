@@ -29,7 +29,7 @@ title: CV
 \vspace{1em}
 
 ## **[Nordic Unmanned](https://nordicunmanned.com/)** \hfill Oslo, Norway{.unnumbered}
-*VP Software & Systems Engineering* \hfill Sept 2019 - currently employed
+*VP Software & Systems Engineering* \hfill Sept 2019 - present
 \vspace{1em}
 
 Nordic Unmanned is the leading drone service company in Europe flying third-party, and proprietary custom drone systems, helicopters, fixed-wing, and multicopter platforms, all unmanned. Nordic Unmanned was the first company in the world awarded the new EASA LUC certification.
@@ -74,7 +74,9 @@ My main responsibility was software architecture. My first task was designing an
 # Hobbies{.unnumbered}
 \vspace{1em}
 
-## **Trajectory optimization toolbox and nonlinear optimization** \hfill 2018 -- present{.unnumbered}
+## **Trajectory optimization toolbox and nonlinear optimization**{.unnumbered}
+\hfill 2018 - present
+\vspace{1em}
 
 [Click here for a more detailed explanation and live demos!](http://mortenlysgaard.com/pages/trajectory-optimization-toolbox.html)
 
@@ -88,11 +90,15 @@ Handling complex constraints like saturation are fundamentally hard when designi
 
 **LINDEF-solver:** Written in pure Rust. This is a sparse, multifrontal, indefinite, direct, linear systems solver. It uses 1x1 and 2x2 numerical pivoting and includes matrix ordering methods to reduce factorization fill-in. It is able to compute the inertia of the factorized matrix, which is crucial for interior point algorithms. It is inspired by the works of [Duff and Reid](https://dl.acm.org/doi/10.1145/356044.356047) and [Liu](https://epubs.siam.org/doi/10.1137/1034004).
 
-## **Kontrol language compiler** \hfill 2016 -- 2019{.unnumbered}
+## **Kontrol language compiler**{.unnumbered}
+\hfill 2016 - 2019
+\vspace{1em}
 
 This is a compiler for a functional [synchronous programming language](https://en.wikipedia.org/wiki/Synchronous_programming_language) I have designed. The synchronous semantics are inspired by [Lustre](https://en.wikipedia.org/wiki/Lustre_(programming_language)), [Lucid Synchrone](https://www.di.ens.fr/~pouzet/lucid-synchrone/index.html), the syntax from [Lisp](https://en.wikipedia.org/wiki/Lisp), and the datatypes, type-system, and functional purity from [Haskell](https://en.wikipedia.org/wiki/Haskell). It is a language specifically designed for writing reactive systems with hard-real-time constraints. The language is a purely functional programming language. One unusual feature of the language is that it forbids recursive data structures and recursive functions. Together with purity, this makes the language not Turing complete. But since it is running in a reactive loop, most useful programs are still possible to express. This trivially makes all programs finite both in memory and time, which is a good property for hard-real-time systems. The compiler is implemented in Haskell and generates machine code, with a C-api interface to the underlying synchronous state machine. This project is currently dormant, as I am focusing more on the model predictive control compiler and nonlinear optimization.
 
 # Publications{.unnumbered}
+
+\vspace{1em}
 
 **[A multiscale method for simulating fluid interfaces covered with large molecules such as asphaltenes](https://doi.org/10.1016/j.jcp.2016.09.039)**
 
