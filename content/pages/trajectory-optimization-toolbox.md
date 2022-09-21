@@ -2,7 +2,10 @@
 title: Trajectory Optimization toolbox
 ---
 
-<video style="width:100%;" autoplay="true" muted="true" loop="true"><source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4"></video>
+<video class="video-width" autoplay="true" muted="true" loop="true">
+<source src="/files/videos/multicopter-trajectory-optimization.webm" type="video/webm">
+<source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4">
+</video>
 
 # Download
 Download Linux AppImage running the above example **[using this link](/files/multicopter-trajectory-optimization-0.1.0-x86_64.AppImage)**.

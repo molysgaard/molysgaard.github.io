@@ -19,6 +19,7 @@ One of the main challenges with developing drones, is the amount of physical tes
 <summary><a href="/pages/trajectory-optimization-toolbox.html"><span class="detail-header">Trajectory optimization toolbox</span>
 
 <video class="video-width" autoplay="true" muted="true" loop="true">
+<source src="/files/videos/multicopter-trajectory-optimization.webm" type="video/webm">
 <source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4">
 </video>
 </a>
