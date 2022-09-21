@@ -2,6 +2,37 @@
 title: Sample projects
 ---
 
+<details>
+<summary><span class="detail-header">The Staaker Drone</span>
+
+<iframe src="https://www.youtube-nocookie.com/embed/EpdFByHiORs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="padding-top: 5px;"></iframe>
+
+The Staaker Drone is the product of The Staaker Company, which I co-founded as CTO during my last year of university.
+</summary>
+We had a common goal of a self flying drone that could follow and film extreme sports athletes autonomously.
+
+As CTO I really focused on understanding our product, both technically and commercially, with the aim of finding a technically feasible product that would satisfy our business and customer constraints.
+I believe that one can not lead what one does not understand the underlying dynamics of.
+Therefore I spent a lot of time with each engineer to learn their specific fields.
+This made me capable of telling where the different fields were in conflict and needed guidance to not end up in a pinch, while they could stay focused on their specializations.
+
+I did lot of the design and specification for the product, examples include:
+
+- Specification of all electrical submodules, how they interact and what main components they should consist of.
+- Specification of all physical parameters of the drone, weight, range, speed, and their interaction with each sub-field.
+- Specification of all software components: What they do, and how they interact with each other to form a hard-real-time autonomous control system.
+
+We were a small company and everyone took on several roles.  
+In addition to the CTO role, I also did software development.
+I am a skilled C++/Rust/Haskell/Python programmer and I was responsible for the implementation of signals processing, estimation, tracking, navigation and control, and implementing all of this hard-real-time in C++ on FreeRTOS on an STM32F4.
+
+<h3>Here are some videos captured by our customers</h3>
+
+<iframe src="https://www.youtube-nocookie.com/embed/DBv5XLc4xsY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube-nocookie.com/embed/At_Ed2iUpTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
+
 <div class="details-container">
 <summary><a href="/pages/robotics-simulator.html"><span class="detail-header">Robotics Simulator</span>
 
