@@ -2,7 +2,7 @@
 title: Sample projects
 ---
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/robotics-simulator.html"><span class="detail-header">Robotics Simulator</span>
 One of the main challenges with developing drones, is the amount of physical testing required. Back in 2015-2016 when we were in the most intense period of development of the Staaker drone, I realized that if we could make our testing and verification more effective, we could improve our development speed drastically. This spawned the simulator project.
 </a></summary>
@@ -96,22 +96,22 @@ For hardware in the loop simulation we chose to use a direct serial connection w
 This way, our simulator could send and receive messages from the autopilot with a rate of 1000Hz and a jitter of less than 1ms.
 -->
 
-</details>
+</div>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/trajectory-optimization-toolbox.html"><span class="detail-header">Trajectory optimization toolbox</span>
 <video style="max-width:70%; max-height:70%;" autoplay="true" muted="true" loop="true"><source src="/files/videos/multicopter-trajectory-optimization.mp4" type="video/mp4"></video>
 
 I have had a long fascination for trajectory optimization. It started back in 2016 when I was researching better ways to handle actuator saturation for drone control systems while developing the Staaker Drone.
 </a>
 </summary>
-</details>
+</div>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/autonomous-rail-landing.html"><span class="detail-header">Autonomous landing on railways tracks</span>
 </a>
 </summary>
-</details>
+</div>
 
 <details>
 <summary><span class="detail-header">Nordic Unmanned Railway Robot Phase 1</span>

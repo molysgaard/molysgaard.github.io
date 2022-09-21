@@ -2,7 +2,7 @@
 title: Sample projects
 ---
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/robotics-simulator.html"><span class="detail-header">Robotics Simulator</span>
 
 <video class="video-width" autoplay="true" muted="true" loop="true">
@@ -13,9 +13,9 @@ title: Sample projects
 
 One of the main challenges with developing drones, is the amount of physical testing required. Back in 2015-2016 when we were in the most intense period of development of the Staaker drone, I realized that if we could make our testing and verification more effective, we could improve our development speed drastically. This spawned the simulator project.
 </summary>
-</details>
+</div>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/trajectory-optimization-toolbox.html"><span class="detail-header">Trajectory optimization toolbox</span>
 
 <video class="video-width" autoplay="true" muted="true" loop="true">
@@ -26,9 +26,9 @@ One of the main challenges with developing drones, is the amount of physical tes
 
 I have had a long fascination for trajectory optimization. It started back in 2016 when I was researching better ways to handle actuator saturation for drone control systems while developing the Staaker Drone.
 </summary>
-</details>
+</div>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/autonomous-rail-landing.html"><span class="detail-header">Autonomous landing on railways tracks</span>
 
 <video class="video-width" autoplay="true" muted="true" loop="true">
@@ -37,7 +37,7 @@ I have had a long fascination for trajectory optimization. It started back in 20
 </video>
 </a>
 </summary>
-</details>
+</div>
 
 <details>
 <summary><span class="detail-header">The Staaker Drone state estimator</span>
@@ -174,15 +174,15 @@ To handle network packet jitter, a jitterbuffer was used on the receiver side. T
 The system was implemented in the Rust programming language, using the gstreamer library.
 </details>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/numerical-solvers.html"><span class="detail-header">Linear systems and NLP solvers</span>
 </a></summary>
-</details>
+</div>
 
-<details>
+<div class="details-container">
 <summary><a href="/pages/kontrol-lang.html"><span class="detail-header">Programming language design and implementation</span>
 </a></summary>
-</details>
+</div>
 
 <!--details>
 <summary><span class="detail-header">Long Range Mesh Radio system</span>

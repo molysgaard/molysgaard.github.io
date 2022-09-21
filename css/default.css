@@ -321,6 +321,7 @@ figure>img {
     max-width: 650px;
 }
 
+.details-container,
 details {
     background-color: #f0f0f0;
     padding: 1em 1em 0.2em 1em;
