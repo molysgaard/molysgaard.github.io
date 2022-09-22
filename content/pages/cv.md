@@ -38,7 +38,12 @@ I am leading the Software Development team of the R&D Department at Nordic Unman
 
 In addition to doing specification, architecture, and project management for the team, I have made significant contributions to our codebase. I am exceptionally good at developing complex scientific code that is maintainable, has no unneeded complexity, is performant, and correct. I excel at problems that are oriented around physics, simulation, mathematical modeling, rigid body dynamics, and similar. With this skill set, it has been crucial for our projects that I have participated as a developer to our codebase.
 
-*One example project which I have led is our [hardware/software-in-the-loop simulator](http://mortenlysgaard.com/pages/robotics-simulator.html), with physically based 3D rendering, simulation of onboard cameras, depth vision, etc. This simulator is used in all our projects to accelerate development, removing costly hardware setups, experiments, and failures. Another recent project is the RailRobot where we developed the world's first drone that lands ([LINK](http://mortenlysgaard.com/pages/autonomous-rail-landing.html)) and drives ([TODO LINK]()) on railway tracks. For this project, I did the full architecture, design, specification, and management. Designed an extended Kalman filter estimator for real-time estimation of the full drone state. Developed a 3D visual estimation and navigation algorithm using 3D stereo-depth cameras and a landing controller for autonomously landing the drone on the rails using the visual estimates.*
+*One example project which I have led is our hardware/software-in-the-loop simulator[^1], with physically based 3D rendering, simulation of onboard cameras, depth vision, etc. This simulator is used in all our projects to accelerate development, removing costly hardware setups, experiments, and failures. Another recent project is the RailRobot where we developed the world's first drone that lands[^2] and drives[^3][^4] on railway tracks. For this project, I did the full architecture, design, specification, and management. Designed an extended Kalman filter estimator for real-time estimation of the full drone state. Developed a 3D visual estimation and navigation algorithm using 3D stereo-depth cameras and a landing controller for autonomously landing the drone on the rails using the visual estimates.*
+
+[^1]: <http://mortenlysgaard.com/pages/robotics-simulator.html>
+[^2]: <http://mortenlysgaard.com/pages/autonomous-rail-landing.html>
+[^3]: <http://mortenlysgaard.com/pages/rail-rover.html>
+[^4]: <https://www.youtube.com/watch?v=srBggRXdrAM>
 \vspace{1em}
 
 ## The Staaker Company\hfill\normalfont{Oslo, Norway} {.unnumbered}
@@ -70,6 +75,8 @@ During the summer of 2014, I worked for Kongsberg Defence and Aerospace on the L
 
 My main responsibility was software architecture. My first task was designing and implementing the architecture for message passing between all components. The second task was designing and implementing a ground control system and telemetry link. For this MAVLINK and QGroundControl was chosen and integrated into our systems. Other smaller tasks were consulting on quadcopter design for the mechanical group and implementing a custom, static, deterministic time memory allocator for our system. All code was written in modern C++ and followed Kongsberg's coding standards.
 \vspace{1em}
+
+\newpage
 
 # Hobbies{.unnumbered}
 \vspace{1em}
