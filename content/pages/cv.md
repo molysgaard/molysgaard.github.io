@@ -28,7 +28,7 @@ title: CV
 
 \vspace{1em}
 
-## **[Nordic Unmanned](https://nordicunmanned.com/)** \hfill Oslo, Norway{.unnumbered}
+## [Nordic Unmanned](https://nordicunmanned.com/)\hfill\normalfont{Oslo, Norway} {.unnumbered}
 *VP Software & Systems Engineering* \hfill Sept 2019 - present
 \vspace{1em}
 
@@ -41,7 +41,7 @@ In addition to doing specification, architecture, and project management for the
 *One example project which I have led is our [hardware/software-in-the-loop simulator](http://mortenlysgaard.com/pages/robotics-simulator.html), with physically based 3D rendering, simulation of onboard cameras, depth vision, etc. This simulator is used in all our projects to accelerate development, removing costly hardware setups, experiments, and failures. Another recent project is the RailRobot where we developed the world's first drone that lands ([LINK](http://mortenlysgaard.com/pages/autonomous-rail-landing.html)) and drives ([TODO LINK]()) on railway tracks. For this project, I did the full architecture, design, specification, and management. Designed an extended Kalman filter estimator for real-time estimation of the full drone state. Developed a 3D visual estimation and navigation algorithm using 3D stereo-depth cameras and a landing controller for autonomously landing the drone on the rails using the visual estimates.*
 \vspace{1em}
 
-## **The Staaker Company** \hfill Oslo, Norway{.unnumbered}
+## The Staaker Company\hfill\normalfont{Oslo, Norway} {.unnumbered}
 *CTO* \hfill Sept 2014 - Sept 2019
 \vspace{1em}
 
@@ -62,7 +62,7 @@ I did a lot of the design and specification for the product, examples include:
 We were a small company and everyone took on several roles. In addition to the CTO role, I also did software development. I am a skilled C++/Rust/Haskell/Python programmer and I was responsible for the implementation of signals processing, estimation, tracking, navigation, and control, and implementing all of this hard-real-time in C++ on FreeRTOS on an STM32F4.
 \vspace{1em}
 
-## **Kongsberg Defence and Aerospace: LocalHawk - Summer intership** \hfill Kongsberg{.unnumbered}
+## Kongsberg Defence and Aerospace: LocalHawk - Summer intership\hfill\normalfont{Kongsberg} {.unnumbered}
 *Embedded Software Engineer* \hfill Jun 2014 - Aug 2014
 \vspace{1em}
 
@@ -74,9 +74,7 @@ My main responsibility was software architecture. My first task was designing an
 # Hobbies{.unnumbered}
 \vspace{1em}
 
-## **Trajectory optimization toolbox and nonlinear optimization**{.unnumbered}
-\hfill 2018 - present
-\vspace{1em}
+## Trajectory optimization toolbox and nonlinear optimization\hfill\normalfont{2018 - present} {.unnumbered}
 
 [Click here for a more detailed explanation and live demos!](http://mortenlysgaard.com/pages/trajectory-optimization-toolbox.html)
 
@@ -90,9 +88,7 @@ Handling complex constraints like saturation are fundamentally hard when designi
 
 **LINDEF-solver:** Written in pure Rust. This is a sparse, multifrontal, indefinite, direct, linear systems solver. It uses 1x1 and 2x2 numerical pivoting and includes matrix ordering methods to reduce factorization fill-in. It is able to compute the inertia of the factorized matrix, which is crucial for interior point algorithms. It is inspired by the works of [Duff and Reid](https://dl.acm.org/doi/10.1145/356044.356047) and [Liu](https://epubs.siam.org/doi/10.1137/1034004).
 
-## **Kontrol language compiler**{.unnumbered}
-\hfill 2016 - 2019
-\vspace{1em}
+## Kontrol language compiler\hfill\normalfont{2016 - 2019} {.unnumbered}
 
 This is a compiler for a functional [synchronous programming language](https://en.wikipedia.org/wiki/Synchronous_programming_language) I have designed. The synchronous semantics are inspired by [Lustre](https://en.wikipedia.org/wiki/Lustre_(programming_language)), [Lucid Synchrone](https://www.di.ens.fr/~pouzet/lucid-synchrone/index.html), the syntax from [Lisp](https://en.wikipedia.org/wiki/Lisp), and the datatypes, type-system, and functional purity from [Haskell](https://en.wikipedia.org/wiki/Haskell). It is a language specifically designed for writing reactive systems with hard-real-time constraints. The language is a purely functional programming language. One unusual feature of the language is that it forbids recursive data structures and recursive functions. Together with purity, this makes the language not Turing complete. But since it is running in a reactive loop, most useful programs are still possible to express. This trivially makes all programs finite both in memory and time, which is a good property for hard-real-time systems. The compiler is implemented in Haskell and generates machine code, with a C-api interface to the underlying synchronous state machine. This project is currently dormant, as I am focusing more on the model predictive control compiler and nonlinear optimization.
 
