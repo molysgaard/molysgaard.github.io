@@ -60,11 +60,22 @@ I have had a long fascination for trajectory optimization. It started back in 20
 </div>
 
 <div class="details-container">
-<summary><a href="/pages/autonomous-rail-landing.html"><span class="detail-header">Autonomous landing on railways tracks</span>
+<summary><a href="/pages/autonomous-rail-landing.html"><span class="detail-header">Nordic Unmanned RailRobot phase 1: Autonomous landing on railways tracks</span>
 
 <video class="video-width" autoplay="true" muted="true" loop="true">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.webm" type="video/webm">
 <source src="/files/videos/robot-simulator/robot-simulator-rail-landing.mp4" type="video/mp4">
+</video>
+</a>
+</summary>
+</div>
+
+<div class="details-container">
+<summary><a href="/pages/rail-rover.html"><span class="detail-header">Nordic Unmanned RailRobot phase 2: RailRover</span>
+
+<video class="video-width" autoplay="true" muted="true" loop="true" controls="true">
+<source src="/files/videos/rail-rover-hello-goodbye.webm" type="video/webm">
+<source src="/files/videos/rail-rover-hello-goodbye.mp4" type="video/mp4">
 </video>
 </a>
 </summary>
@@ -147,7 +158,7 @@ In the Staaker drone, yaw-rate is always sacrificed first, if saturation is dete
 </details>
 
 <details>
-<summary><span class="detail-header">Nordic Unmanned Railway Robot Phase 1</span>
+<summary><span class="detail-header">Nordic Unmanned RailRobot phase 1: Fly and drive frame</span>
 
 <iframe src="https://www.youtube-nocookie.com/embed/srBggRXdrAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
