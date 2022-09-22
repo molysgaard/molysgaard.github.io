@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morten Lysgaard">
+  <meta name="author" content="Morten Lysgaard">
+  <title>Nordic Unmanned RailRobot project phase 2: RailRover</title>
+  <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              showMathMenu: false,
+              jax: ["input/TeX","output/CommonHTML"],
+              extensions: ["tex2jax.js"],
+              messageStyle: "none",
+                tex2jax: {
+                  processEscapes: true,
+                  ignoreClass: "tex2jax_ignore",
+                  processClass: "math"
+                },
+              TeX: { 
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js"],
+                Macros: { 
+                    R: '{\\mathbb{R}}', 
+                    N: '{\\mathbb{N}}', 
+                    Z: '{\\mathbb{Z}}', 
+                    C: '{\\mathbb{C}}', 
+                    F: '{\\mathbb{F}}', 
+                    argmin: '{\\mathop{\\operatorname*{arg\\,min}}}',
+                    argmax: '{\\mathop{\\operatorname*{arg\\,max}}}',
+                    mex: '{\\mathop{\\operatorname{mex}}}', 
+                    lcm: '{\\mathop{\\operatorname{lcm}}}',
+                    bigtriangleright: '{\\mathop{\\Large \\triangleright}}',
+                    bigtriangleleft: '{\\mathop{\\Large \\triangleleft}}',
+                    set: ['\\left\\{ #1 \\right\\}',1],
+                    floor: ['\\left\\lfloor #1 \\right\\rfloor',1],
+                    ceil:  ['\\left\\lceil #1 \\right\\rceil',1],
+                    abs:  ['\\left| #1 \\right|',1]
+                 } 
+                },
+                "HTML-CSS": { fonts: ["STIX"] }
+            });
+        </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/default.css" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24607697-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-24607697-1');
+  </script>
+
+</head>
+
+<body class="tex2jax_ignore">
+  <header class="hide-on-print">
+    <div id="blog-title">
+      <a href="/">Morten Lysgaard</a>
+    </div>
+    <nav>
+      <ul style="display: inline-block;">
+        <li><a href="/">Home</a></li>
+        <!--li><a href="/pages/cv.html">CV</a></li-->
+        <li><a href="/pages/trajectory-optimization-toolbox.html">Trajectory Optimization Toolbox</a></li>
+        <li><a href="/pages/robotics-simulator.html">Robotics Simulator</a></li>
+        <li><a href="/posts.html">Posts</a></li>
+        <!--li><a href="/archive.html">Archive</a></li-->
+      </ul>
+    </nav>
+  </header>
+  <article>
+    <h1 id="article-title">Nordic Unmanned RailRobot project phase 2: RailRover</h1>
+    <video class="video-width" autoplay="true" muted="true" loop="true" controls="true">
+<source src="/files/videos/rail-rover-hello-goodbye.webm" type="video/webm">
+<source src="/files/videos/rail-rover-hello-goodbye.mp4" type="video/mp4">
+</video>
+<p>After the demonstration of <a href="/pages/autonomous-rail-landing.html">autonomous landing on rails</a>, and creating a drone frame that could both drive on rail and fly, the next phase of the RailRobot project was decided to be about demonstrating a useful data capture platform.</p>
+<p>For this part of the project, the RailRover was created. Because the focus was on demonstrating a useful data capture platform, it cannot fly but has all the sensors and connectivity of the RailRobot.</p>
+<p>My team has worked on developing the software in the RailRover over the course of 1 year. This is the first time we have designed an internet-connected vehicle, and designing and implementing this huge change took the better part of the year. Features we implemented include:</p>
+<ul>
+<li>Integration with existing ground control software, letting the operator do waypoint missions, automatic navigation, program cameras, gimbals, etc.</li>
+<li>Internet-connected RailRover, controllable from anywhere on the planet with an internet connection.</li>
+<li>Secure network</li>
+<li>IP-based network + standard Linux computer inside. Allows very easy integration of arbitrary sensors, like LIDARS, inspection cameras, gimbals, etc.</li>
+<li>Live video streaming of all 3 on-board cameras. With our custom low latency, low bandwidth, and high-efficiency video-encoding stack.</li>
+<li>Ability to record high-definition videos while streaming low bandwidth streams to the operator.</li>
+<li>Ability to download captured high-definition inspection data</li>
+<li>Management GUI, usable by non-engineers, for seeing system status, logs, restarting system services, configuring parameters, etc.</li>
+</ul>
+
+  </article>
+  <footer class="hide-on-print">© 2011 -
+    <script>document.write(new Date().getFullYear())</script> Morten Lysgaard. Licensed under GPL-v3 or later unless
+    otherwise specified.
+  </footer>
+
+</body>
+
+</html>
+
+</html>
