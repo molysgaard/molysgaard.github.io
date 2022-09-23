@@ -2,11 +2,11 @@
 title: CV
 ---
 
-# Introduction{.unnumbered}
+# Introduction
 
 8 years of experience in R&D drone development. Co-founded successful drone startup, The Staaker Company, during last year of university as CTO. Understands and can lead engineering projects that include mechanical, software, electrical, and cybernetics. Skilled C++ software developer, with specialization in control systems, mathematical modeling, simulation, and optimization. Please check my webpage <http://mortenlysgaard.com> for videos and more in-depth information about my work.
 
-# Education{.unnumbered}
+# Education
 
 **Norwegian University of Science and Technology, NTNU**                           \hfill   Trondheim, Norway
 
@@ -24,11 +24,11 @@ title: CV
 
 *Master of Science (M.Sc.) in Applied Physics and Mathematics, exchange semester*  \hfill       2014 - 2014
 
-# Work experience{.unnumbered}
+# Work experience
 
 \vspace{1em}
 
-## [Nordic Unmanned](https://nordicunmanned.com/)\hfill\normalfont{Oslo, Norway} {.unnumbered}
+## [Nordic Unmanned](https://nordicunmanned.com/)\hfill\normalfont{Oslo, Norway}
 *VP Software & Systems Engineering* \hfill Sept 2019 - present
 \vspace{1em}
 
@@ -46,7 +46,7 @@ In addition to doing specification, architecture, and project management for the
 [^4]: <https://www.youtube.com/watch?v=srBggRXdrAM>
 \vspace{1em}
 
-## The Staaker Company\hfill\normalfont{Oslo, Norway} {.unnumbered}
+## The Staaker Company\hfill\normalfont{Oslo, Norway}
 *CTO* \hfill Sept 2014 - Sept 2019
 \vspace{1em}
 
@@ -67,7 +67,7 @@ I did a lot of the design and specification for the product, examples include:
 We were a small company and everyone took on several roles. In addition to the CTO role, I also did software development. I am a skilled C++/Rust/Haskell/Python programmer and I was responsible for the implementation of signals processing, estimation, tracking, navigation, and control, and implementing all of this hard-real-time in C++ on FreeRTOS on an STM32F4.
 \vspace{1em}
 
-## Kongsberg Defence and Aerospace: LocalHawk - Summer intership\hfill\normalfont{Kongsberg} {.unnumbered}
+## Kongsberg Defence and Aerospace: LocalHawk - Summer intership\hfill\normalfont{Kongsberg}
 *Embedded Software Engineer* \hfill Jun 2014 - Aug 2014
 \vspace{1em}
 
@@ -78,12 +78,12 @@ My main responsibility was software architecture. My first task was designing an
 
 \newpage
 
-# Hobbies{.unnumbered}
+# Hobbies
 \vspace{1em}
 
-## Trajectory optimization toolbox and nonlinear optimization\hfill\normalfont{2018 - present} {.unnumbered}
+## Trajectory optimization toolbox and nonlinear optimization\hfill\normalfont{2018 - present}
 
-[Click here for a more detailed explanation and live demos!](http://mortenlysgaard.com/pages/trajectory-optimization-toolbox.html)
+For a more detailed explanation and live demos, check [my web page](http://mortenlysgaard.com/pages/trajectory-optimization-toolbox.html).
 
 Handling complex constraints like saturation are fundamentally hard when designing control systems for robotics. Since 2018, I have done personal research on what the state of the art in real-time trajectory optimization is. My research has been focused on optimization of smooth nonlinear nonconvex systems. I have developed several algorithms, which together form a trajectory optimization compiler. It takes as input a symbolic description of the equations of the system to control, and outputs a shared library, with a nonlinear optimizer specially compiled to optimize for the given system. The components are:
 
@@ -95,11 +95,11 @@ Handling complex constraints like saturation are fundamentally hard when designi
 
 **LINDEF-solver:** Written in pure Rust. This is a sparse, multifrontal, indefinite, direct, linear systems solver. It uses 1x1 and 2x2 numerical pivoting and includes matrix ordering methods to reduce factorization fill-in. It is able to compute the inertia of the factorized matrix, which is crucial for interior point algorithms. It is inspired by the works of [Duff and Reid](https://dl.acm.org/doi/10.1145/356044.356047) and [Liu](https://epubs.siam.org/doi/10.1137/1034004).
 
-## Kontrol language compiler\hfill\normalfont{2016 - 2019} {.unnumbered}
+## Kontrol language compiler\hfill\normalfont{2016 - 2019}
 
 This is a compiler for a functional [synchronous programming language](https://en.wikipedia.org/wiki/Synchronous_programming_language) I have designed. The synchronous semantics are inspired by [Lustre](https://en.wikipedia.org/wiki/Lustre_(programming_language)), [Lucid Synchrone](https://www.di.ens.fr/~pouzet/lucid-synchrone/index.html), the syntax from [Lisp](https://en.wikipedia.org/wiki/Lisp), and the datatypes, type-system, and functional purity from [Haskell](https://en.wikipedia.org/wiki/Haskell). It is a language specifically designed for writing reactive systems with hard-real-time constraints. The language is a purely functional programming language. One unusual feature of the language is that it forbids recursive data structures and recursive functions. Together with purity, this makes the language not Turing complete. But since it is running in a reactive loop, most useful programs are still possible to express. This trivially makes all programs finite both in memory and time, which is a good property for hard-real-time systems. The compiler is implemented in Haskell and generates machine code, with a C-api interface to the underlying synchronous state machine. This project is currently dormant, as I am focusing more on the model predictive control compiler and nonlinear optimization.
 
-# Publications{.unnumbered}
+# Publications
 
 \vspace{1em}
 
