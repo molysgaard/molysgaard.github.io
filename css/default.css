@@ -402,7 +402,11 @@ h3 {
     font-size: 1.2em;
     font-style: italic;
     font-weight: bold;
-    text-decoration: underline dotted;
+    text-decoration: underline;
+}
+
+.detail-header:hover {
+    text-decoration: none;
 }
 
 /* You must be doing it wrong... if you use the following headings
@@ -430,11 +434,11 @@ footer {
 a:not(.image-link) {
     /*text-decoration: none;
     border-bottom: 1px black dotted;*/
-    text-decoration: black dotted underline;
+    text-decoration: black underline;
 }
 
 a:not(.image-link):hover {
-    text-decoration: black underline;
+    text-decoration: black none;
 }
 
 a:hover {
