@@ -4,7 +4,7 @@ title: CV
 
 # Introduction
 
-8 years of experience in R&D drone development. Co-founded successful drone startup, The Staaker Company, during last year of university as CTO. Understands and can lead engineering projects that include mechanical, software, electrical, and cybernetics. Skilled C++ software developer, with specialization in control systems, mathematical modeling, simulation, and optimization. Please check my webpage <http://mortenlysgaard.com> for videos and more in-depth information about my work.
+I have 8 years of experience in R&D drone development. I co-founded (CTO) a successful drone startup, The Staaker Company, during my last year of university. I understand and can lead engineering projects and teams that include mechanical, software, electrical, and cybernetics. I am a skilled C++ software developer, with a focus on estimation and control, mathematical modeling, simulation, and optimization. Please check my webpage <http://mortenlysgaard.com> for videos and more in-depth information about my work.
 
 # Education
 
